@@ -15,3 +15,6 @@ addons/Todo_Manager/todo.cfg
 
 .vscode/
 .DS_Store
+assets/tiny_swords/
+docs/verification/*-runtime.log
+docs/verification/*-graphical.log

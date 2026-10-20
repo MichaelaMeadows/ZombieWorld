@@ -14,10 +14,10 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Godot 2D Top-Down Template"
+config/name="Autonomous World — The Briarwatch"
 config/version="1.9.4"
 config/tags=PackedStringArray("template")
-run/main_scene="res://scenes/menus/start_screen.tscn"
+run/main_scene="res://game/arena.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.png"
 
@@ -36,10 +36,15 @@ runtime/balloon_path="res://dialogues/balloons/dialogue_balloon.tscn"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
-window/stretch/scale_mode="integer"
+
+[dotnet]
+
+project/assembly_name="Autonomous World — The Briarwatch"
 
 [editor_plugins]
 
