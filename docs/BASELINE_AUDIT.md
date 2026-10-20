@@ -8,7 +8,7 @@ Installed/tested: 4.7.2.stable.mono.official.ed1daf0bf, Compatibility renderer.
 ## Unmodified verification
 
 Imported before source changes. Headless menu boots. Graphical menu and New Game
-successfully open playground_01; screenshot in verification/baseline-demo.png.
+successfully open playground_01; screenshot in verification/baseline-demo.jpg.
 Movement and attack keys exercised. This is a smoke test, not exhaustive gameplay QA.
 Initial sandbox run could not write editor preferences; rerunning with normal user
 directory access resolved those errors.

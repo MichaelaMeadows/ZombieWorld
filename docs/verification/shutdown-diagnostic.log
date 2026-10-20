@@ -1,0 +1,154 @@
+WorkerThreadPool: 16 threads, 4 max low-priority.
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+Using "default" pen tablet driver...
+
+Loading resource: res://local/translations.en.translation remapped: res://local/translations.en.translation
+Completed load for: 'res://local/translations.en.translation' remapped 'res://local/translations.en.translation' at thread -1
+Loading resource: res://local/translations.it.translation remapped: res://local/translations.it.translation
+Completed load for: 'res://local/translations.it.translation' remapped 'res://local/translations.it.translation' at thread -1
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+.NET: Initializing module...
+Found hostfxr: C:/Program Files/dotnet/host/fxr/10.0.4/hostfxr.dll
+.NET: hostfxr initialized
+.NET: GodotPlugins initialized
+.NET: Failed to load project assembly
+Loading resource: res://default_bus_layout.tres remapped: res://default_bus_layout.tres
+Completed load for: 'res://default_bus_layout.tres' remapped 'res://default_bus_layout.tres' at thread -1
+CORE API HASH: 3677103882
+EDITOR API HASH: 1629494564
+SceneTreeFTI: traversal method DEFAULT
+Loading resource: res://scripts/autoloads/Globals.gd remapped: res://scripts/autoloads/Globals.gd
+Loading resource: res://scenes/menus/settings_menu.tscn remapped: res://scenes/menus/settings_menu.tscn
+Loading resource: res://scripts/settings_menu.gd remapped: res://scripts/settings_menu.gd
+Completed load for: 'res://scripts/settings_menu.gd' remapped 'res://scripts/settings_menu.gd' at thread -1
+Completed load for: 'res://scenes/menus/settings_menu.tscn' remapped 'res://scenes/menus/settings_menu.tscn' at thread -1
+Loading resource: res://scenes/menus/loading_canvass.tscn remapped: res://scenes/menus/loading_canvass.tscn
+Loading resource: res://scripts/loading_screen.gd remapped: res://scripts/loading_screen.gd
+Completed load for: 'res://scripts/loading_screen.gd' remapped 'res://scripts/loading_screen.gd' at thread -1
+Completed load for: 'res://scenes/menus/loading_canvass.tscn' remapped 'res://scenes/menus/loading_canvass.tscn' at thread -1
+Completed load for: 'res://scripts/autoloads/Globals.gd' remapped 'res://scripts/autoloads/Globals.gd' at thread -1
+Loading resource: res://scripts/autoloads/debugger.gd remapped: res://scripts/autoloads/debugger.gd
+Completed load for: 'res://scripts/autoloads/debugger.gd' remapped 'res://scripts/autoloads/debugger.gd' at thread -1
+Loading resource: res://addons/dialogue_manager/dialogue_manager.gd remapped: res://addons/dialogue_manager/dialogue_manager.gd
+Loading resource: res://addons/dialogue_manager/test_scene.tscn remapped: res://addons/dialogue_manager/test_scene.tscn
+Loading resource: res://addons/dialogue_manager/test_scene.gd remapped: res://addons/dialogue_manager/test_scene.gd
+Completed load for: 'res://addons/dialogue_manager/test_scene.gd' remapped 'res://addons/dialogue_manager/test_scene.gd' at thread -1
+Completed load for: 'res://addons/dialogue_manager/test_scene.tscn' remapped 'res://addons/dialogue_manager/test_scene.tscn' at thread -1
+Completed load for: 'res://addons/dialogue_manager/dialogue_manager.gd' remapped 'res://addons/dialogue_manager/dialogue_manager.gd' at thread -1
+MbedTLS: Some X509 certificates could not be parsed (1 certificates skipped).
+Loaded system CA certificates
+Loading resource: res://game/arena.tscn remapped: res://game/arena.tscn
+Loading resource: res://game/arena.gd remapped: res://game/arena.gd
+Loading resource: res://game/actors/actor.tscn remapped: res://game/actors/actor.tscn
+Loading resource: res://game/actors/arena_actor.gd remapped: res://game/actors/arena_actor.gd
+Loading resource: res://game/content/light.tres remapped: res://game/content/light.tres
+Loading resource: res://game/combat/attack_definition.gd remapped: res://game/combat/attack_definition.gd
+Completed load for: 'res://game/combat/attack_definition.gd' remapped 'res://game/combat/attack_definition.gd' at thread -1
+Completed load for: 'res://game/content/light.tres' remapped 'res://game/content/light.tres' at thread -1
+Loading resource: res://game/content/heavy.tres remapped: res://game/content/heavy.tres
+Completed load for: 'res://game/content/heavy.tres' remapped 'res://game/content/heavy.tres' at thread -1
+Loading resource: res://game/content/enemy_light.tres remapped: res://game/content/enemy_light.tres
+Completed load for: 'res://game/content/enemy_light.tres' remapped 'res://game/content/enemy_light.tres' at thread -1
+Loading resource: res://shaders/flash.gdshader remapped: res://shaders/flash.gdshader
+Completed load for: 'res://shaders/flash.gdshader' remapped 'res://shaders/flash.gdshader' at thread -1
+Completed load for: 'res://game/actors/arena_actor.gd' remapped 'res://game/actors/arena_actor.gd' at thread -1
+Loading resource: res://game/actors/arena_health.gd remapped: res://game/actors/arena_health.gd
+Completed load for: 'res://game/actors/arena_health.gd' remapped 'res://game/actors/arena_health.gd' at thread -1
+Loading resource: res://assets/art/Warrior_Blue.png remapped: res://assets/art/Warrior_Blue.png
+Loading resource: res://.godot/imported/Warrior_Blue.png-1d890d338cc005bc84d7d938c1371a24.ctex remapped: res://.godot/imported/Warrior_Blue.png-1d890d338cc005bc84d7d938c1371a24.ctex
+Completed load for: 'res://assets/art/Warrior_Blue.png' remapped 'res://assets/art/Warrior_Blue.png' at thread -1
+Completed load for: 'res://game/actors/actor.tscn' remapped 'res://game/actors/actor.tscn' at thread -1
+Loading resource: res://assets/art/Tilemap_Flat.png remapped: res://assets/art/Tilemap_Flat.png
+Loading resource: res://.godot/imported/Tilemap_Flat.png-0f71070b62b011f8862d379de114c568.ctex remapped: res://.godot/imported/Tilemap_Flat.png-0f71070b62b011f8862d379de114c568.ctex
+Completed load for: 'res://assets/art/Tilemap_Flat.png' remapped 'res://assets/art/Tilemap_Flat.png' at thread -1
+Completed load for: 'res://game/arena.gd' remapped 'res://game/arena.gd' at thread -1
+Completed load for: 'res://game/arena.tscn' remapped 'res://game/arena.tscn' at thread -1
+Loading resource: res://assets/art/Tower_Blue.png remapped: res://assets/art/Tower_Blue.png
+Loading resource: res://.godot/imported/Tower_Blue.png-ca852b7244d7fe610b9ee2988b7d978b.ctex remapped: res://.godot/imported/Tower_Blue.png-ca852b7244d7fe610b9ee2988b7d978b.ctex
+Completed load for: 'res://assets/art/Tower_Blue.png' remapped 'res://assets/art/Tower_Blue.png' at thread -1
+Loading resource: res://assets/art/Tree.png remapped: res://assets/art/Tree.png
+Loading resource: res://.godot/imported/Tree.png-669c199dc12d2ff5ac5242d030519515.ctex remapped: res://.godot/imported/Tree.png-669c199dc12d2ff5ac5242d030519515.ctex
+Completed load for: 'res://assets/art/Tree.png' remapped 'res://assets/art/Tree.png' at thread -1
+Loading resource: res://assets/art/05.png remapped: res://assets/art/05.png
+Loading resource: res://.godot/imported/05.png-916688433bf0834590c518d38e373d49.ctex remapped: res://.godot/imported/05.png-916688433bf0834590c518d38e373d49.ctex
+Completed load for: 'res://assets/art/05.png' remapped 'res://assets/art/05.png' at thread -1
+Loading resource: res://assets/art/08.png remapped: res://assets/art/08.png
+Loading resource: res://.godot/imported/08.png-8b200a293382a68547ae83ecfd73b17a.ctex remapped: res://.godot/imported/08.png-8b200a293382a68547ae83ecfd73b17a.ctex
+Completed load for: 'res://assets/art/08.png' remapped 'res://assets/art/08.png' at thread -1
+Loading resource: res://assets/art/18.png remapped: res://assets/art/18.png
+Loading resource: res://.godot/imported/18.png-3f545cd000ffc6c0d8e1374a576b79b2.ctex remapped: res://.godot/imported/18.png-3f545cd000ffc6c0d8e1374a576b79b2.ctex
+Completed load for: 'res://assets/art/18.png' remapped 'res://assets/art/18.png' at thread -1
+Loading resource: res://assets/art/12.png remapped: res://assets/art/12.png
+Loading resource: res://.godot/imported/12.png-1a5ff5341ae3dfb6ace1d094314ce816.ctex remapped: res://.godot/imported/12.png-1a5ff5341ae3dfb6ace1d094314ce816.ctex
+Completed load for: 'res://assets/art/12.png' remapped 'res://assets/art/12.png' at thread -1
+Loading resource: res://assets/art/17.png remapped: res://assets/art/17.png
+Loading resource: res://.godot/imported/17.png-f230c2c4ebfc4e4a4238af3c4e47c062.ctex remapped: res://.godot/imported/17.png-f230c2c4ebfc4e4a4238af3c4e47c062.ctex
+Completed load for: 'res://assets/art/17.png' remapped 'res://assets/art/17.png' at thread -1
+Loading resource: res://assets/art/14.png remapped: res://assets/art/14.png
+Loading resource: res://.godot/imported/14.png-a54a5fb390008301f696493807e81585.ctex remapped: res://.godot/imported/14.png-a54a5fb390008301f696493807e81585.ctex
+Completed load for: 'res://assets/art/14.png' remapped 'res://assets/art/14.png' at thread -1
+Loading resource: res://assets/art/13.png remapped: res://assets/art/13.png
+Loading resource: res://.godot/imported/13.png-b73c86ddb6d7f96dc3ee8a5168360d86.ctex remapped: res://.godot/imported/13.png-b73c86ddb6d7f96dc3ee8a5168360d86.ctex
+Completed load for: 'res://assets/art/13.png' remapped 'res://assets/art/13.png' at thread -1
+Loading resource: res://assets/art/10.png remapped: res://assets/art/10.png
+Loading resource: res://.godot/imported/10.png-c790d5f8f3fca62c90f7878445f5a8c5.ctex remapped: res://.godot/imported/10.png-c790d5f8f3fca62c90f7878445f5a8c5.ctex
+Completed load for: 'res://assets/art/10.png' remapped 'res://assets/art/10.png' at thread -1
+Loading resource: res://assets/art/15.png remapped: res://assets/art/15.png
+Loading resource: res://.godot/imported/15.png-007e86ee123d2bb45f87edc6259cc27b.ctex remapped: res://.godot/imported/15.png-007e86ee123d2bb45f87edc6259cc27b.ctex
+Completed load for: 'res://assets/art/15.png' remapped 'res://assets/art/15.png' at thread -1
+Loading resource: res://assets/art/16.png remapped: res://assets/art/16.png
+Loading resource: res://.godot/imported/16.png-23b629a9c82fba1a8f3d073d91225cd0.ctex remapped: res://.godot/imported/16.png-23b629a9c82fba1a8f3d073d91225cd0.ctex
+Completed load for: 'res://assets/art/16.png' remapped 'res://assets/art/16.png' at thread -1
+Loading resource: res://assets/art/09.png remapped: res://assets/art/09.png
+Loading resource: res://.godot/imported/09.png-fc2eaaa673b3dce51b3dac56634fbb56.ctex remapped: res://.godot/imported/09.png-fc2eaaa673b3dce51b3dac56634fbb56.ctex
+Completed load for: 'res://assets/art/09.png' remapped 'res://assets/art/09.png' at thread -1
+Loading resource: res://assets/art/11.png remapped: res://assets/art/11.png
+Loading resource: res://.godot/imported/11.png-e4a1c9af690fdab23458365b5b62df5a.ctex remapped: res://.godot/imported/11.png-e4a1c9af690fdab23458365b5b62df5a.ctex
+Completed load for: 'res://assets/art/11.png' remapped 'res://assets/art/11.png' at thread -1
+Loading resource: res://assets/art/Warrior_Red.png remapped: res://assets/art/Warrior_Red.png
+Loading resource: res://.godot/imported/Warrior_Red.png-a528ef12b5e7709689789e6de8ab0ed9.ctex remapped: res://.godot/imported/Warrior_Red.png-a528ef12b5e7709689789e6de8ab0ed9.ctex
+Completed load for: 'res://assets/art/Warrior_Red.png' remapped 'res://assets/art/Warrior_Red.png' at thread -1
+Loading resource: res://assets/art/Warrior_Purple.png remapped: res://assets/art/Warrior_Purple.png
+Loading resource: res://.godot/imported/Warrior_Purple.png-169e534ad289717dd0d7db2e643c8a74.ctex remapped: res://.godot/imported/Warrior_Purple.png-169e534ad289717dd0d7db2e643c8a74.ctex
+Completed load for: 'res://assets/art/Warrior_Purple.png' remapped 'res://assets/art/Warrior_Purple.png' at thread -1
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit.
+   at: clear (core/io/resource.cpp:817)
+Unloading: Disposing tracked instances...
+Unloading: Finished disposing tracked instances.
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"
+Leaked instance: GDScriptNativeClass:9223372050326881022 - Reference count: 1
+Leaked instance: GDScript:9223372068597270035 - Reference count: 1
+Hint: Leaked instances typically happen when nodes are removed from the scene tree (with `remove_child()`) but not freed (with `free()` or `queue_free()`).
+Resource still in use: res://scripts/state_machine/states/state.gd (GDScript)
+Orphan StringName: _enter_tree (static: 1, total: 2)
+Orphan StringName: handle_input (static: 0, total: 1)
+Orphan StringName: _enable_on_completion (static: 0, total: 1)
+Orphan StringName: State (static: 0, total: 3)
+Orphan StringName: delay_start (static: 0, total: 4)
+Orphan StringName: _enter_delayed (static: 0, total: 1)
+Orphan StringName: active (static: 0, total: 3)
+Orphan StringName: _start_timer (static: 0, total: 1)
+Orphan StringName: on_completion (static: 0, total: 3)
+Orphan StringName: @group_5_Await Timer (static: 0, total: 1)
+Orphan StringName: enable (static: 0, total: 1)
+Orphan StringName: delay_completion (static: 0, total: 4)
+Orphan StringName: disabled (static: 0, total: 4)
+Orphan StringName: exit (static: 0, total: 1)
+Orphan StringName: state_machine (static: 0, total: 2)
+Orphan StringName: @group_0_Settings (static: 0, total: 1)
+Orphan StringName: timer (static: 0, total: 3)
+Orphan StringName: Node (static: 6, total: 8)
+Orphan StringName: physics_update (static: 0, total: 1)
+Orphan StringName: update (static: 0, total: 1)
+Orphan StringName: StateTimer (static: 0, total: 1)
+Orphan StringName: disable (static: 0, total: 1)
+Orphan StringName: @group_3_Advance (static: 0, total: 1)
+Orphan StringName: complete (static: 0, total: 1)
+Orphan StringName: enter (static: 0, total: 1)
+StringName: 25 unclaimed string names at exit.

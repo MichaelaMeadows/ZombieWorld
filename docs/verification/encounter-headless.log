@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+Raider1 [91mdamaged[39m by Vanguard! HP: 44[0m
+Raider1 [91mdamaged[39m by Vanguard! HP: 22[0m
+Raider1 [91mdamaged[39m by Vanguard! HP: 0[0m
+Raider2 [91mdamaged[39m by Vanguard! HP: 44[0m
+Raider2 [91mdamaged[39m by Vanguard! HP: 22[0m
+Raider2 [91mdamaged[39m by Vanguard! HP: 0[0m
+IronWarden [91mdamaged[39m by Vanguard! HP: 93[0m
+Vanguard [91mdamaged[39m by IronWarden! HP: 58[0m
+Vanguard [91mdamaged[39m by IronWarden! HP: 16[0m
+ENCOUNTER_REPORT: {"actions":9,"actor_count":4,"hero_health":16,"impacts":9,"max_ai_decision_us":47,"mean_frame_ms":16.6666666666666,"p95_frame_ms":16.6666666666667,"physics_frames":720,"rendered":false,"renderer":"","victory":false}
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://game/actors/arena_actor.gd" id="1"]
-[ext_resource type="Script" path="res://components/health_controller.gd" id="2"]
+[ext_resource type="Script" path="res://game/actors/arena_health.gd" id="2"]
 [ext_resource type="Texture2D" path="res://assets/art/Warrior_Blue.png" id="3"]
-[ext_resource type="Shader" path="res://shaders/flash.gdshader" id="4"]
 [sub_resource type="CircleShape2D" id="Body"]
 radius = 15.0
 

@@ -1,0 +1,13 @@
+{
+	"actions": 9,
+	"actor_count": 4,
+	"hero_health": 40,
+	"impacts": 8,
+	"max_ai_decision_us": 41,
+	"mean_frame_ms": 17.0002312056738,
+	"p95_frame_ms": 16.8153333333333,
+	"physics_frames": 720,
+	"rendered": true,
+	"renderer": "NVIDIA GeForce RTX 4070",
+	"victory": false
+}

@@ -6,11 +6,27 @@ var actors: Array[ArenaActor] = []
 var camera: Camera2D
 var hud: CanvasLayer
 var obstacles: Array[Rect2] = []
+var navigation := AStarGrid2D.new()
+var preferences := ArenaPreferences.load_or_create()
+var audio: Dictionary = {}
+var impacts := 0
+var recent_events: Array[String] = []
+var shake_left := 0.0
+var elapsed := 0.0
+var encounter_finished := false
+var test_mode := false
+var frame_samples: Array[float] = []
 
 func _ready() -> void:
 	_build_world()
+	_build_navigation()
+	_bind_controls()
+	for kind in ["swing", "hit", "heavy", "block", "miss"]:
+		audio[kind] = CombatAudio.make(kind)
 	hero = ACTOR.instantiate()
+	hero.name = "Vanguard"
 	hero.player_controlled = true
+	hero.arena = self
 	hero.position = Vector2(600, 540)
 	$Actors.add_child(hero)
 	actors.append(hero)
@@ -22,10 +38,143 @@ func _ready() -> void:
 	camera.limit_right = 1536
 	camera.limit_bottom = 1024
 	hero.add_child(camera)
+	for index in range(3):
+		var enemy: ArenaActor = ACTOR.instantiate()
+		enemy.name = "IronWarden" if index == 2 else "Raider%d" % (index + 1)
+		enemy.entity_id = "briarwatch_enemy_%d" % index
+		enemy.team = 1
+		enemy.heavy = index == 2
+		enemy.arena = self
+		enemy.position = [Vector2(1000, 440), Vector2(1155, 650), Vector2(1260, 485)][index]
+		$Actors.add_child(enemy)
+		actors.append(enemy)
 	hud = preload("res://game/ui/arena_hud.gd").new()
 	hud.arena = self
 	hud.hero = hero
 	add_child(hud)
+
+func _process(delta: float) -> void:
+	elapsed += delta
+	if frame_samples.size() < 3600:
+		frame_samples.append(delta)
+	shake_left = maxf(0, shake_left - delta)
+	camera.offset = Vector2(sin(elapsed * 95), cos(elapsed * 83)) * shake_left * 35 if preferences.camera_shake else Vector2.ZERO
+	if not encounter_finished and actors.size() > 1:
+		var alive := 0
+		for actor in actors:
+			if actor.team == 1 and not actor.dead:
+				alive += 1
+		if alive == 0:
+			encounter_finished = true
+			record_event("Clearing secured. Return to the watchtower to recover.")
+
+func _bind_controls() -> void:
+	var bindings := {"aw_light": MOUSE_BUTTON_LEFT, "aw_block": MOUSE_BUTTON_RIGHT, "aw_heavy": KEY_Q, "aw_dodge": KEY_SPACE, "aw_debug": KEY_F3, "aw_reset": KEY_R, "aw_interact": KEY_E}
+	for action in bindings:
+		if InputMap.has_action(action):
+			continue
+		InputMap.add_action(action)
+		var event: InputEvent
+		if action == "aw_light" or action == "aw_block":
+			event = InputEventMouseButton.new()
+			event.button_index = bindings[action]
+		else:
+			event = InputEventKey.new()
+			event.physical_keycode = bindings[action]
+		InputMap.action_add_event(action, event)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("aw_interact") and hero.position.distance_to(Vector2(300, 400)) < 130 and not hero.dead:
+		hero.health_controller.change_hp(100, "Watchtower")
+		hero.combat.stamina = 100
+		record_event("Rested at the watchtower.")
+	elif event.is_action_pressed("aw_reset") and (hero.dead or encounter_finished):
+		get_tree().reload_current_scene()
+
+func _build_navigation() -> void:
+	navigation.region = Rect2i(0, 0, 48, 32)
+	navigation.cell_size = Vector2(32, 32)
+	navigation.offset = Vector2(16, 16)
+	navigation.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
+	navigation.update()
+	for y in range(32):
+		for x in range(48):
+			var p := Vector2(x * 32 + 16, y * 32 + 16)
+			for obstacle in obstacles:
+				if obstacle.grow(18).has_point(p):
+					navigation.set_point_solid(Vector2i(x, y))
+					break
+
+func find_path(from: Vector2, to: Vector2) -> PackedVector2Array:
+	var start := Vector2i(floori(from.x / 32), floori(from.y / 32))
+	var end := Vector2i(floori(to.x / 32), floori(to.y / 32))
+	if not navigation.is_in_boundsv(start) or not navigation.is_in_boundsv(end):
+		return PackedVector2Array()
+	# A body can stand beside a conservatively inflated navigation cell.
+	if navigation.is_point_solid(end):
+		var closest := end
+		var distance := INF
+		for y in range(-2, 3):
+			for x in range(-2, 3):
+				var candidate := end + Vector2i(x, y)
+				if navigation.is_in_boundsv(candidate) and not navigation.is_point_solid(candidate):
+					var d := Vector2(candidate - start).length_squared()
+					if d < distance:
+						closest = candidate
+						distance = d
+		end = closest
+	if navigation.is_point_solid(start) or navigation.is_point_solid(end):
+		return PackedVector2Array()
+	var path := navigation.get_point_path(start, end, true)
+	if not path.is_empty():
+		path.remove_at(0)
+	return path
+
+func separation(subject: ArenaActor) -> Vector2:
+	var result := Vector2.ZERO
+	# Local encounter only, bounded to four actors; no whole-world tree queries.
+	for other in actors:
+		if other == subject or other.dead:
+			continue
+		var offset := subject.position - other.position
+		var length := offset.length()
+		if length < 37 and length > 0.01:
+			result += offset / length * (1 - length / 37)
+	return result
+
+func on_impact(target: Node2D, amount: int, blocked: bool, heavy_hit: bool, source: ArenaActor) -> void:
+	impacts += 1
+	var effect := preload("res://game/presentation/combat_feedback.gd").new()
+	effect.position = target.global_position + Vector2(0, -15)
+	effect.direction = source.position.direction_to(target.position)
+	effect.amount = amount
+	effect.blocked = blocked
+	effect.heavy = heavy_hit
+	effect.show_number = preferences.damage_numbers
+	effect.intensity = preferences.effects
+	effect.z_index = 10
+	add_child(effect)
+	play_sound("block" if blocked else ("heavy" if heavy_hit else "hit"), target.position)
+	if heavy_hit and not blocked:
+		shake_left = 0.16 * preferences.effects
+	record_event("%s → %s  %s" % [source.name, target.name, "blocked" if blocked else str(amount)])
+
+func play_sound(kind: String, pos: Vector2) -> void:
+	if test_mode or not audio.has(kind):
+		return
+	var sound := AudioStreamPlayer2D.new()
+	sound.stream = audio[kind]
+	sound.position = pos
+	sound.volume_db = linear_to_db(maxf(0.001, preferences.volume)) - 9
+	sound.max_distance = 1500
+	add_child(sound)
+	sound.finished.connect(sound.queue_free)
+	sound.play()
+
+func record_event(text: String) -> void:
+	recent_events.push_front(text)
+	if recent_events.size() > 6:
+		recent_events.pop_back()
 
 func _build_world() -> void:
 	var terrain := Node2D.new()

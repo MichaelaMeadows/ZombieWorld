@@ -1,0 +1,41 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+WARNING: res://scenes/hud/player_hud.tscn:4 - ext_resource, invalid UID: uid://dnfkfjs86era6 - using text path instead: res://scenes/hud/heart-empty.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/hud/player_hud.tscn:5 - ext_resource, invalid UID: uid://ycfmtnxswo8m - using text path instead: res://scenes/hud/heart.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://particles/smoke_particles.tscn:3 - ext_resource, invalid UID: uid://8o8o0dbabo06 - using text path instead: res://particles/smoke.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/props/potion.tscn:3 - ext_resource, invalid UID: uid://dpwho47q3yn2f - using text path instead: res://scenes/props/objs1.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/props/chest.tscn:3 - ext_resource, invalid UID: uid://61occmkqb206 - using text path instead: res://scenes/props/chest.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/levels/playground_02.tscn:9 - ext_resource, invalid UID: uid://b6aa2tfgr3xr3 - using text path instead: res://entities/player/chara-hero.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/levels/playground_02.tscn:11 - ext_resource, invalid UID: uid://ce03ya5cuipp2 - using text path instead: res://entities/npcs/chara-forest.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/props/door.tscn:3 - ext_resource, invalid UID: uid://d26pe861y7rye - using text path instead: res://scenes/props/door.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/levels/playground_02.tscn:19 - ext_resource, invalid UID: uid://bpx4calgjdlyw - using text path instead: res://dialogues/commons.dialogue
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/levels/playground_02.tscn:21 - ext_resource, invalid UID: uid://7lmdmiq2ytyf - using text path instead: res://dialogues/start.dialogue
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://entities/enemies/enemy.tscn:6 - ext_resource, invalid UID: uid://cwgxsewe67xym - using text path instead: res://entities/enemies/enemy-1.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://entities/enemies/enemy.tscn:7 - ext_resource, invalid UID: uid://2hk61pfrsnoq - using text path instead: res://entities/player/chara-hero.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+Entity equipped weapon:
+   At: res://entities/character_entity.gd:114:_set_weapon()
+Enemy1 equipped weapon:
+   At: res://entities/character_entity.gd:114:_set_weapon()
+Entity equipped weapon: sword
+   At: res://entities/character_entity.gd:114:_set_weapon()
+Player equipped weapon: sword
+   At: res://entities/character_entity.gd:114:_set_weapon()
+GameCamera2D target set to: Player:<CharacterBody2D#116299666088>
+NPC target set to: Player:<CharacterBody2D#116299666088>
+Enemy1 target set to: Player:<CharacterBody2D#116299666088>
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

@@ -1,0 +1,25 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+WARNING: res://scenes/hud/player_hud.tscn:4 - ext_resource, invalid UID: uid://dnfkfjs86era6 - using text path instead: res://scenes/hud/heart-empty.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/hud/player_hud.tscn:5 - ext_resource, invalid UID: uid://ycfmtnxswo8m - using text path instead: res://scenes/hud/heart.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://particles/smoke_particles.tscn:3 - ext_resource, invalid UID: uid://8o8o0dbabo06 - using text path instead: res://particles/smoke.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/props/switch.tscn:3 - ext_resource, invalid UID: uid://wbxf50llw7yc - using text path instead: res://scenes/props/lever.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/props/gate_front_up.tscn:3 - ext_resource, invalid UID: uid://dks6ukqiocu3p - using text path instead: res://scenes/props/blocks.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/props/trap.tscn:3 - ext_resource, invalid UID: uid://dxgjym3ogh8u1 - using text path instead: res://scenes/props/blocks.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+WARNING: res://scenes/props/potion.tscn:3 - ext_resource, invalid UID: uid://dpwho47q3yn2f - using text path instead: res://scenes/props/objs1.png
+   at: load (scene/resources/resource_format_text.cpp:501)
+Entity equipped weapon: sword
+   At: res://entities/character_entity.gd:114:_set_weapon()
+Player equipped weapon: sword
+   At: res://entities/character_entity.gd:114:_set_weapon()
+GameCamera2D target set to: Player:<CharacterBody2D#116836537296>
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)
