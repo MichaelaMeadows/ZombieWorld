@@ -1,0 +1,5 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://game/arena.tscn" id="1"]
+[ext_resource type="Resource" path="res://game/content/sword_loadout.tres" id="2"]
+[node name="BriarwatchSword" instance=ExtResource("1")]
+player_loadout = ExtResource("2")

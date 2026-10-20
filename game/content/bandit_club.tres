@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ActorArchetype" load_steps=5 format=3]
+[ext_resource type="Script" path="res://game/content/actor_archetype.gd" id="1"]
+[ext_resource type="Resource" path="res://game/content/bandit_club_loadout.tres" id="2"]
+[ext_resource type="Resource" path="res://game/content/bandit_club_sprites.tres" id="3"]
+[ext_resource type="Resource" path="res://game/content/modular/one_handed/club.tres" id="4"]
+[resource]
+script = ExtResource("1")
+label = "Club bandit"
+health = 80
+weapon = ExtResource("2")
+sprites = ExtResource("3")
+sprite_rig = ExtResource("4")
+ranged = false

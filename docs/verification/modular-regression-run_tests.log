@@ -1,0 +1,95 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+Unicode parsing error, some characters were replaced with � (U+FFFD): Invalid UTF-8 leading byte (97)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Invalid UTF-8 leading byte (97)
+PASS: light attack accepted from ready
+PASS: attack consumes authored stamina
+PASS: cooldown rejects overlapping attack
+PASS: startup cannot damage
+test_enemy [91mdamaged[39m by test_hero! HP: 44[0m
+PASS: hitbox activates on timeline
+PASS: active arc applies authored damage
+PASS: same swing cannot hit twice
+PASS: hitbox deactivates in recovery
+PASS: recovery returns to ready
+PASS: next attack accepted after recovery
+PASS: friendly fire excluded
+PASS: targets behind swing are excluded
+PASS: out-of-range targets excluded
+PASS: dodge costs stamina
+PASS: dodge invulnerability rejects damage
+test_enemy [91mdamaged[39m by test_hero! HP: 44[0m
+PASS: dodge immunity ends after 190 ms
+PASS: frontal block absorbs damage
+PASS: block drains stamina rather than health
+test_enemy [91mdamaged[39m by test_hero! HP: 44[0m
+PASS: block cannot protect the back
+PASS: exhaustion prevents attacks and dodges
+test_enemy [91mdamaged[39m by test_hero! HP: 44[0m
+PASS: damage interrupts unarmored startup
+test_enemy [91mdamaged[39m by test_hero! HP: 44[0m
+PASS: warden resists light stagger
+test_enemy [91mdamaged[39m by test_hero! HP: 2[0m
+PASS: heavy hit interrupts armored startup
+test_enemy [91mdamaged[39m by test_hero! HP: 0[0m
+PASS: lethal hit clamps health and enters death
+PASS: dead actors cannot attack
+PASS: late input buffer starts next attack
+PASS: startup cannot be dodge-canceled
+PASS: recovery can be dodge-canceled
+PASS: localized hit-stop does not freeze another actor
+PASS: solid obstacles block melee damage
+PASS: greatsword trades speed for reach and damage
+PASS: greatsword secondary is heavier and slower
+PASS: both greatsword attacks author 30 percent knockdown
+PASS: seeded probability distribution is near 30 percent (3028/10000)
+test_enemy [91mdamaged[39m by test_hero! HP: 28[0m
+PASS: knockdown interrupts even armored enemies
+PASS: knocked-down actor cannot attack or dodge
+PASS: knockdown disables voluntary movement
+PASS: knockdown disables block
+PASS: knockdown presents a prone body
+PASS: enemy remains disabled through 990 ms
+PASS: enemy stands and can act at one second, including hit-stop
+PASS: reapplication refreshes without duplicate stacks
+PASS: refreshed effect lasts one second from reapplication
+PASS: refreshed effect expires on time
+PASS: blocked hits do not apply knockdown
+PASS: invulnerable targets do not receive status
+PASS: friendly hits do not apply statuses
+test_enemy [91mdamaged[39m by test_hero! HP: 28[0m
+PASS: failed proc leaves target without status
+test_enemy [91mdamaged[39m by test_hero! HP: 0[0m
+PASS: death clears statuses and does not reapply knockdown
+PASS: independent slow survives knockdown without blocking actions
+PASS: slow expires and restores movement
+PASS: generic root permits attacks but prevents dodge movement
+PASS: root stops movement during an existing dodge
+PASS: status clock does not advance while gameplay is paused
+test_enemy [91mdamaged[39m by test_hero! HP: 28[0m
+PASS: extended-range swing delivers damage and status through real hit resolver
+PASS: arena has one player and three autonomous melee opponents
+PASS: default arena equips greatsword
+PASS: upward greatsword swing uses the layered back-view animation
+PASS: navigation routes through arena
+PASS: navigation rejects invalid endpoints safely
+PASS: enemy acquires nearby hostile: Zombie1
+PASS: enemy acquires nearby hostile: Zombie2
+PASS: enemy acquires nearby hostile: ZombieBrute
+PASS: enemy recovers when target dies: Zombie1
+PASS: enemy recovers when target dies: Zombie2
+PASS: enemy recovers when target dies: ZombieBrute
+PASS: pause modal pauses gameplay
+PASS: pause has a connected resume action
+PASS: resume button restores gameplay
+PASS: settings retains modal pause
+PASS: HUD reflects live health
+PASS: actual unhandled input reaches shared combat
+PASS: modal suppresses gameplay input
+PASS: preferences serialize
+PASS: preferences round trip
+RESULT: 75 assertions, 0 failures
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

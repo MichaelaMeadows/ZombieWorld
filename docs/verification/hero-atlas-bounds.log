@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+[{"feet":[80.5,225],"pixels":17954,"rect":[103,27,231,228]},{"feet":[79.5,226],"pixels":17881,"rect":[1122,27,221,229]},{"feet":[80.0,222],"pixels":17862,"rect":[439,30,226,225]},{"feet":[79.0,222],"pixels":17880,"rect":[778,30,222,225]},{"feet":[91.0,222],"pixels":17546,"rect":[435,265,209,225]},{"feet":[93.5,225],"pixels":17832,"rect":[758,265,227,228]},{"feet":[94.0,221],"pixels":18165,"rect":[90,267,234,224]},{"feet":[91.0,220],"pixels":17560,"rect":[1111,268,221,223]},{"feet":[98.0,225],"pixels":19353,"rect":[422,496,247,228]},{"feet":[90.5,223],"pixels":17224,"rect":[1105,501,229,226]},{"feet":[93.5,221],"pixels":18090,"rect":[130,503,198,224]},{"feet":[98.5,185],"pixels":19752,"rect":[695,537,359,188]},{"feet":[86.0,201],"pixels":17423,"rect":[428,726,219,204]},{"feet":[87.0,199],"pixels":15489,"rect":[1103,728,216,202]},{"feet":[104.0,170],"pixels":14132,"rect":[98,757,209,173]},{"feet":[94.0,170],"pixels":16682,"rect":[734,757,295,173]},{"feet":[127.0,201],"pixels":18212,"rect":[413,925,224,204]},{"feet":[92.0,199],"pixels":15721,"rect":[1112,926,209,202]},{"feet":[98.5,177],"pixels":16379,"rect":[111,947,243,180]},{"feet":[101.5,175],"pixels":17522,"rect":[733,950,306,178]}]
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

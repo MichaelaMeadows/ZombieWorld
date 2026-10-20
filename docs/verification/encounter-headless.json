@@ -1,9 +1,9 @@
 {
-	"actions": 9,
+	"actions": 5,
 	"actor_count": 4,
-	"hero_health": 16,
-	"impacts": 9,
-	"max_ai_decision_us": 47,
+	"hero_health": 0,
+	"impacts": 11,
+	"max_ai_decision_us": 35,
 	"mean_frame_ms": 16.6666666666666,
 	"p95_frame_ms": 16.6666666666667,
 	"physics_frames": 720,

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponLoadout" load_steps=5 format=3]
+[ext_resource type="Script" path="res://game/combat/weapon_loadout.gd" id="1"]
+[ext_resource type="Resource" path="res://game/content/greatsword_cut.tres" id="2"]
+[ext_resource type="Resource" path="res://game/content/greatsword_cleave.tres" id="3"]
+[ext_resource type="Resource" path="res://game/content/modular/two_handed/hero.tres" id="4"]
+[resource]
+script = ExtResource("1")
+label = "Greatsword"
+two_handed = true
+primary = ExtResource("2")
+secondary = ExtResource("3")
+sprite_rig = ExtResource("4")

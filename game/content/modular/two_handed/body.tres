@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ModularSpriteLayer" format=3]
+
+[ext_resource type="Script" path="res://game/presentation/modular_sprite_layer.gd" id="1_coi67"]
+
+[ext_resource type="Texture2D" path="res://assets/art/modular/two_handed/body.png" id="2_texture"]
+
+[resource]
+script = ExtResource("1_coi67")
+sheet = ExtResource("2_texture")
+label = "Hero body"
+family = &"two_handed"
+rig_id = &"human_two_handed_v1"
+slot = &"body"
+depth = 0
+frame_depths = PackedInt32Array()
+frame_scales = PackedVector2Array()
+frame_rotations = PackedFloat32Array()
+
+

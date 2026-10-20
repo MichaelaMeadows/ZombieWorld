@@ -1,0 +1,178 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PASS: player accepts shared attack intent
+PASS: player startup does not hit
+source damaged by player! HP: 999
+PASS: player hits hostile but not friend
+PASS: player stable ID prevents duplicate hit after immunity clears
+PASS: player returns to ready after authored recovery
+PASS: player recovery aims next action without turning old swing
+PASS: player buffers at exact recovery boundary
+PASS: player hit-stop preserves queued intent
+PASS: player boundary-crossing frame consumes buffer once with new aim
+PASS: player queued attack charges stamina exactly once
+player damaged by source! HP: 999
+PASS: player stagger cancels committed and queued attacks
+PASS: player reaction survives local hit-stop
+PASS: player cannot act through impact pause
+PASS: player directional recoil and hit flash share damage signal
+PASS: player partial hit-stop frame uses only unpaused time
+PASS: player recoil moves away from impact without input
+PASS: player finishes stagger without ghost attack
+PASS: player block has feedback without damage animation
+player recovered by test_heal! HP: 901
+PASS: player healing does not trigger a hit reaction
+PASS: ally accepts shared attack intent
+PASS: ally startup does not hit
+source damaged by ally! HP: 999
+PASS: ally hits hostile but not friend
+PASS: ally stable ID prevents duplicate hit after immunity clears
+PASS: ally returns to ready after authored recovery
+PASS: ally recovery aims next action without turning old swing
+PASS: ally buffers at exact recovery boundary
+PASS: ally hit-stop preserves queued intent
+PASS: ally boundary-crossing frame consumes buffer once with new aim
+PASS: ally queued attack charges stamina exactly once
+ally damaged by source! HP: 999
+PASS: ally stagger cancels committed and queued attacks
+PASS: ally reaction survives local hit-stop
+PASS: ally cannot act through impact pause
+PASS: ally directional recoil and hit flash share damage signal
+PASS: ally partial hit-stop frame uses only unpaused time
+PASS: ally recoil moves away from impact without input
+PASS: ally finishes stagger without ghost attack
+PASS: ally block has feedback without damage animation
+ally recovered by test_heal! HP: 901
+PASS: ally healing does not trigger a hit reaction
+PASS: zombie accepts shared attack intent
+PASS: zombie startup does not hit
+source damaged by zombie! HP: 999
+PASS: zombie hits hostile but not friend
+PASS: zombie stable ID prevents duplicate hit after immunity clears
+PASS: zombie returns to ready after authored recovery
+PASS: zombie recovery aims next action without turning old swing
+PASS: zombie buffers at exact recovery boundary
+PASS: zombie hit-stop preserves queued intent
+PASS: zombie boundary-crossing frame consumes buffer once with new aim
+PASS: zombie queued attack charges stamina exactly once
+zombie damaged by source! HP: 999
+PASS: zombie stagger cancels committed and queued attacks
+PASS: zombie reaction survives local hit-stop
+PASS: zombie cannot act through impact pause
+PASS: zombie directional recoil and hit flash share damage signal
+PASS: zombie partial hit-stop frame uses only unpaused time
+PASS: zombie recoil moves away from impact without input
+PASS: zombie finishes stagger without ghost attack
+PASS: zombie block has feedback without damage animation
+zombie recovered by test_heal! HP: 901
+PASS: zombie healing does not trigger a hit reaction
+PASS: brute accepts shared attack intent
+PASS: brute startup does not hit
+source damaged by brute! HP: 999
+PASS: brute hits hostile but not friend
+PASS: brute stable ID prevents duplicate hit after immunity clears
+PASS: brute returns to ready after authored recovery
+PASS: brute recovery aims next action without turning old swing
+PASS: brute buffers at exact recovery boundary
+PASS: brute hit-stop preserves queued intent
+PASS: brute boundary-crossing frame consumes buffer once with new aim
+PASS: brute queued attack charges stamina exactly once
+brute damaged by source! HP: 999
+PASS: brute stagger cancels committed and queued attacks
+PASS: brute reaction survives local hit-stop
+PASS: brute cannot act through impact pause
+PASS: brute directional recoil and hit flash share damage signal
+PASS: brute partial hit-stop frame uses only unpaused time
+PASS: brute recoil moves away from impact without input
+PASS: brute finishes stagger without ghost attack
+PASS: brute block has feedback without damage animation
+brute recovered by test_heal! HP: 901
+PASS: brute healing does not trigger a hit reaction
+PASS: club accepts shared attack intent
+PASS: club startup does not hit
+source damaged by club! HP: 999
+PASS: club hits hostile but not friend
+PASS: club stable ID prevents duplicate hit after immunity clears
+PASS: club returns to ready after authored recovery
+PASS: club recovery aims next action without turning old swing
+PASS: club buffers at exact recovery boundary
+PASS: club hit-stop preserves queued intent
+PASS: club boundary-crossing frame consumes buffer once with new aim
+PASS: club queued attack charges stamina exactly once
+club damaged by source! HP: 999
+PASS: club stagger cancels committed and queued attacks
+PASS: club reaction survives local hit-stop
+PASS: club cannot act through impact pause
+PASS: club directional recoil and hit flash share damage signal
+PASS: club partial hit-stop frame uses only unpaused time
+PASS: club recoil moves away from impact without input
+PASS: club finishes stagger without ghost attack
+PASS: club block has feedback without damage animation
+club recovered by test_heal! HP: 901
+PASS: club healing does not trigger a hit reaction
+PASS: archer accepts shared attack intent
+PASS: archer startup does not hit
+source damaged by archer! HP: 999
+PASS: archer hits hostile but not friend
+PASS: archer stable ID prevents duplicate hit after immunity clears
+PASS: archer returns to ready after authored recovery
+PASS: archer recovery aims next action without turning old swing
+PASS: archer buffers at exact recovery boundary
+PASS: archer hit-stop preserves queued intent
+PASS: archer boundary-crossing frame consumes buffer once with new aim
+PASS: archer queued attack charges stamina exactly once
+archer damaged by source! HP: 999
+PASS: archer stagger cancels committed and queued attacks
+PASS: archer reaction survives local hit-stop
+PASS: archer cannot act through impact pause
+PASS: archer directional recoil and hit flash share damage signal
+PASS: archer partial hit-stop frame uses only unpaused time
+PASS: archer recoil moves away from impact without input
+PASS: archer finishes stagger without ghost attack
+PASS: archer block has feedback without damage animation
+archer recovered by test_heal! HP: 901
+PASS: archer healing does not trigger a hit reaction
+PASS: short recovery never permits buffering during active frames
+PASS: short attack still reaches ready
+PASS: attacker timeline preserves sub-frame hit-stop remainder
+PASS: shared impact never changes global time scale
+PASS: no premature active phase at 30 Hz
+PASS: no premature active phase at 30 Hz
+PASS: no premature active phase at 30 Hz
+PASS: complete valid timeline at 30 Hz
+PASS: no premature active phase at 60 Hz
+PASS: no premature active phase at 60 Hz
+PASS: no premature active phase at 60 Hz
+PASS: no premature active phase at 60 Hz
+PASS: no premature active phase at 60 Hz
+PASS: no premature active phase at 60 Hz
+PASS: no premature active phase at 60 Hz
+PASS: complete valid timeline at 60 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: no premature active phase at 120 Hz
+PASS: complete valid timeline at 120 Hz
+PASS: Clubbandit1 begins authored AI attack
+PASS: Clubbandit1 tactical delay does not drain during committed attack
+PASS: Clubbandit1 recovery wakes AI immediately
+PASS: Clubbandit1 attacks as cooldown ends without waiting for next scan
+PASS: Clubbandit1 stops stale movement at end of path
+PASS: Clubbandit1 idle decisions remain throttled
+PASS: Banditarcher3 begins authored AI attack
+PASS: Banditarcher3 tactical delay does not drain during committed attack
+PASS: Banditarcher3 recovery wakes AI immediately
+PASS: Banditarcher3 attacks as cooldown ends without waiting for next scan
+PASS: Banditarcher3 stops stale movement at end of path
+PASS: Banditarcher3 idle decisions remain throttled
+RESPONSIVENESS_RESULT: 157 assertions, 0 failures

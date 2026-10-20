@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ModularSpriteLayer" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/presentation/modular_sprite_layer.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/modular/one_handed/body.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+label = "head_foreground"
+family = &"one_handed"
+rig_id = &"human_one_handed_v1"
+slot = &"head_foreground"
+sheet = ExtResource("2")
+depth = 4
+regions = Array[Rect2]([Rect2(115, 70, 59, 45), Rect2(371, 70, 59, 45), Rect2(627, 70, 59, 45), Rect2(883, 70, 59, 45), Rect2(1139, 70, 59, 45), Rect2(1395, 70, 59, 45), Rect2(1651, 70, 59, 45), Rect2(1907, 70, 59, 45), Rect2(113, 333, 60, 44), Rect2(369, 333, 60, 44), Rect2(625, 333, 60, 44), Rect2(881, 333, 60, 44), Rect2(1126, 334, 60, 45), Rect2(1382, 334, 60, 45), Rect2(1638, 334, 60, 45), Rect2(1894, 334, 60, 45), Rect2(115, 599, 59, 44), Rect2(371, 596, 59, 44), Rect2(640, 596, 60, 44), Rect2(889, 602, 59, 44), Rect2(1139, 603, 59, 45), Rect2(1395, 603, 59, 45), Rect2(1651, 603, 59, 45), Rect2(1907, 603, 59, 45), Rect2(107, 845, 59, 44), Rect2(363, 845, 59, 44), Rect2(631, 848, 60, 44), Rect2(886, 846, 59, 44), Rect2(1139, 835, 59, 45), Rect2(1399, 837, 60, 44), Rect2(1669, 832, 59, 45), Rect2(1913, 838, 59, 45), Rect2(108, 1106, 60, 44), Rect2(372, 1104, 60, 44), Rect2(631, 1115, 60, 44), Rect2(879, 1106, 60, 44), Rect2(1129, 1098, 60, 44), Rect2(1387, 1098, 59, 44), Rect2(1666, 1089, 59, 44), Rect2(1910, 1092, 59, 44), Rect2(105, 1361, 60, 44), Rect2(360, 1359, 59, 45), Rect2(634, 1349, 60, 44), Rect2(876, 1353, 60, 44), Rect2(1140, 1378, 60, 44), Rect2(1353, 1365, 60, 45), Rect2(1667, 1373, 60, 44), Rect2(1919, 1373, 59, 44), Rect2(118, 1663, 59, 44), Rect2(374, 1663, 59, 44), Rect2(654, 1669, 60, 45), Rect2(910, 1669, 60, 45), Rect2(1142, 1611, 59, 45), Rect2(1401, 1611, 59, 45), Rect2(1664, 1623, 60, 44), Rect2(1914, 1617, 60, 45)])
+pivots = Array[Vector2]([Vector2(13, 150), Vector2(13, 150), Vector2(13, 150), Vector2(13, 150), Vector2(13, 150), Vector2(13, 150), Vector2(13, 150), Vector2(13, 150), Vector2(15, 143), Vector2(15, 143), Vector2(15, 143), Vector2(15, 143), Vector2(26, 142), Vector2(26, 142), Vector2(26, 142), Vector2(26, 142), Vector2(13, 133), Vector2(13, 136), Vector2(0, 136), Vector2(7, 130), Vector2(13, 129), Vector2(13, 129), Vector2(13, 129), Vector2(13, 129), Vector2(21, 143), Vector2(21, 143), Vector2(9, 140), Vector2(10, 142), Vector2(13, 153), Vector2(9, 151), Vector2(-5, 156), Vector2(7, 150), Vector2(20, 138), Vector2(12, 140), Vector2(9, 129), Vector2(17, 138), Vector2(23, 146), Vector2(21, 146), Vector2(-2, 155), Vector2(10, 152), Vector2(23, 139), Vector2(24, 141), Vector2(6, 151), Vector2(20, 147), Vector2(12, 122), Vector2(55, 135), Vector2(-3, 127), Vector2(1, 127), Vector2(10, 93), Vector2(10, 93), Vector2(-14, 87), Vector2(-14, 87), Vector2(10, 145), Vector2(7, 145), Vector2(0, 133), Vector2(6, 139)])

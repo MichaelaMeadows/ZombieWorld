@@ -1,0 +1,7 @@
+PASS milestone2-import
+PASS combat-tests
+PASS movement-tests
+PASS zombie-tests-runtime
+PASS encounter-headless
+PASS layout-headless
+Verified. Known upstream state.gd shutdown resource warning remains allowlisted.

@@ -1,0 +1,54 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PASS: WASD reaches walking speed
+PASS: walking selects the dedicated cycle
+PASS: walking cadence follows distance traveled
+PASS: walk cycle takes at least 850ms at full walking speed
+PASS: Shift reaches running speed
+PASS: running selects its own poses
+PASS: diagonal running has no speed bonus
+PASS: vertical movement uses front/back poses
+PASS: stopping ends foot cycling
+PASS: block overrides run speed and poses
+PASS: root stops motion and foot cycling
+PASS: pause freezes movement and animation
+PASS: player retains diagonal aim
+PASS: swing direction locks through the attack
+PASS: player displays a diagonal strike
+Zombie1 damaged by Vanguard! HP: 99
+PASS: narrow player swing hits on each diagonal
+PASS: NPC decision aims at the target on each diagonal
+PASS: NPC displays a diagonal swipe
+Vanguard damaged by Zombie1! HP: 88
+PASS: NPC diagonal swipe connects
+PASS: player retains diagonal aim
+PASS: swing direction locks through the attack
+PASS: player displays a diagonal strike
+Zombie1 damaged by Vanguard! HP: 99
+PASS: narrow player swing hits on each diagonal
+PASS: NPC decision aims at the target on each diagonal
+PASS: NPC displays a diagonal swipe
+Vanguard damaged by Zombie1! HP: 88
+PASS: NPC diagonal swipe connects
+PASS: player retains diagonal aim
+PASS: swing direction locks through the attack
+PASS: player displays a diagonal strike
+Zombie1 damaged by Vanguard! HP: 99
+PASS: narrow player swing hits on each diagonal
+PASS: NPC decision aims at the target on each diagonal
+PASS: NPC displays a diagonal swipe
+Vanguard damaged by Zombie1! HP: 88
+PASS: NPC diagonal swipe connects
+PASS: player retains diagonal aim
+PASS: swing direction locks through the attack
+PASS: player displays a diagonal strike
+Zombie1 damaged by Vanguard! HP: 99
+PASS: narrow player swing hits on each diagonal
+PASS: NPC decision aims at the target on each diagonal
+PASS: NPC displays a diagonal swipe
+Vanguard damaged by Zombie1! HP: 88
+PASS: NPC diagonal swipe connects
+PASS: aim remains continuous between the eight visual directions
+PASS: coincident aim preserves the last valid direction
+PASS: NPC returns from diagonal atlas to cardinal sheet
+MOVEMENT_RESULT: 43 assertions, 0 failures

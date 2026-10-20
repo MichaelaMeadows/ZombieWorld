@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="AttackDefinition" load_steps=5 format=3]
+[ext_resource type="Script" path="res://game/combat/attack_definition.gd" id="1"]
+[ext_resource type="Script" path="res://game/combat/status_application.gd" id="2"]
+[ext_resource type="Resource" path="res://game/content/knockdown.tres" id="3"]
+[sub_resource type="Resource" id="Proc"]
+script = ExtResource("2")
+effect = ExtResource("3")
+chance = 0.3
+[resource]
+script = ExtResource("1")
+label = "Greatsword cleave"
+startup = 0.65
+active = 0.20
+recovery = 0.65
+damage = 60
+reach = 114.0
+arc_degrees = 102.0
+stamina_cost = 36.0
+stagger = 0.55
+knockback = 300.0
+hit_stop = 0.085
+heavy = true
+on_hit_effects = Array[ExtResource("2")]([SubResource("Proc")])

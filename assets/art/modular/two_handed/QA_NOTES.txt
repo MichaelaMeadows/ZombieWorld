@@ -1,0 +1,20 @@
+Hero modular artwork review
+
+Four independent generated layers, all normalized to 2048x1792:
+body.png: plain blue under-tunic, dark trousers, boots, bare hands; no armor or weapon.
+armor.png: detached brown torso armor only; no full characters.
+weapon.png: greatsword only; no skin. Drawn behind body for hand occlusion.
+foreground.png: exact accepted-body pixels under fitted head/arm masks. Retained as an optional authoring/debug layer; not equipped by default.
+
+All 56 poses inspected in all_frames_preview.png. Enlarged movement/attack/death samples in calibrated_preview.png.
+Death body clipping was repaired through a second body image generation edit.
+Weapon regions use measured connected-component bounds rather than fixed cells: horizontal strike tips and falling blades extend across original cell boundaries.
+Armor placements use blue torso area measurements followed by visual review. Final registration is baked into the standard 8x7 atlas.
+After user authorization for deterministic pixel editing, armor alpha was clipped to the exact body silhouette and cut by fitted head/arm masks. Body pixels now show directly through the equipment. No independently repainted head or arm pixels are displayed.
+All 56 armor frames retain nonempty independent clothing; no armor alpha exists outside body alpha.
+Weapon artwork and connected-component overscan registrations were preserved unchanged by this finishing pass.
+
+The active rig uses three layers: body, armor, weapon. Foreground is unnecessary because the armor contains occlusion cutouts.
+Reproducible finishing scripts: refine_foreground.py then refine_armor.py. Their saved source sheets and registrations preserve the generated inputs.
+Exact imagegen prompts, including rejected iterations, are in GENERATION_PROMPTS.txt.
+Artwork was generated using the built-in imagegen tool. Godot resized/package-rendered the PNGs. Initially Python only measured registration; after explicit user authorization, Pillow/numpy performed deterministic alpha masking and exact-body pixel extraction.

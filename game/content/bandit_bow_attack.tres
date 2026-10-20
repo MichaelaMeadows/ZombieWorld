@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttackDefinition" load_steps=2 format=3]
+[ext_resource type="Script" path="res://game/combat/attack_definition.gd" id="1"]
+[resource]
+script = ExtResource("1")
+label = "Arrow"
+startup = 0.65
+active = 0.1
+recovery = 0.65
+damage = 14
+reach = 420
+arc_degrees = 8
+stamina_cost = 14
+stagger = 0.12
+knockback = 65
+heavy = false
+delivery = 1

@@ -1,0 +1,108 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PASS: isolated bandit encounter has player, two clubs and an archer
+PASS: archetype health applies
+PASS: weapons select melee and ranged delivery
+PASS: Clubbandit1 has 56 authored poses
+PASS: Clubbandit1 atlas regions stay inside texture
+PASS: Clubbandit1 atlas regions stay inside texture
+PASS: Clubbandit1 atlas regions stay inside texture
+PASS: Clubbandit1 movement pose Walk(1.0, 0.0)0
+PASS: Clubbandit1 movement pose Walk(1.0, 0.0)1
+PASS: Clubbandit1 movement pose Walk(1.0, 0.0)2
+PASS: Clubbandit1 movement pose Walk(1.0, 0.0)3
+PASS: Clubbandit1 movement pose Run(1.0, 0.0)0
+PASS: Clubbandit1 movement pose Run(1.0, 0.0)1
+PASS: Clubbandit1 movement pose Run(1.0, 0.0)2
+PASS: Clubbandit1 movement pose Run(1.0, 0.0)3
+PASS: Clubbandit1 movement pose Walk(0.0, 1.0)0
+PASS: Clubbandit1 movement pose Walk(0.0, 1.0)1
+PASS: Clubbandit1 movement pose Walk(0.0, 1.0)2
+PASS: Clubbandit1 movement pose Walk(0.0, 1.0)3
+PASS: Clubbandit1 movement pose Run(0.0, 1.0)0
+PASS: Clubbandit1 movement pose Run(0.0, 1.0)1
+PASS: Clubbandit1 movement pose Run(0.0, 1.0)2
+PASS: Clubbandit1 movement pose Run(0.0, 1.0)3
+PASS: Clubbandit1 movement pose Walk(0.0, -1.0)0
+PASS: Clubbandit1 movement pose Walk(0.0, -1.0)1
+PASS: Clubbandit1 movement pose Walk(0.0, -1.0)2
+PASS: Clubbandit1 movement pose Walk(0.0, -1.0)3
+PASS: Clubbandit1 movement pose Run(0.0, -1.0)0
+PASS: Clubbandit1 movement pose Run(0.0, -1.0)1
+PASS: Clubbandit1 movement pose Run(0.0, -1.0)2
+PASS: Clubbandit1 movement pose Run(0.0, -1.0)3
+PASS: Clubbandit1 directional strike 0
+PASS: Clubbandit1 directional strike 1
+PASS: Clubbandit1 directional strike 2
+PASS: Clubbandit1 directional strike 3
+PASS: Clubbandit1 directional strike 4
+PASS: Clubbandit1 directional strike 5
+PASS: Clubbandit1 directional strike 6
+PASS: Clubbandit1 directional strike 7
+PASS: Clubbandit1 hurt poses
+PASS: Clubbandit1 death holds final pose
+PASS: Banditarcher3 has 56 authored poses
+PASS: Banditarcher3 atlas regions stay inside texture
+PASS: Banditarcher3 atlas regions stay inside texture
+PASS: Banditarcher3 atlas regions stay inside texture
+PASS: Banditarcher3 movement pose Walk(1.0, 0.0)0
+PASS: Banditarcher3 movement pose Walk(1.0, 0.0)1
+PASS: Banditarcher3 movement pose Walk(1.0, 0.0)2
+PASS: Banditarcher3 movement pose Walk(1.0, 0.0)3
+PASS: Banditarcher3 movement pose Run(1.0, 0.0)0
+PASS: Banditarcher3 movement pose Run(1.0, 0.0)1
+PASS: Banditarcher3 movement pose Run(1.0, 0.0)2
+PASS: Banditarcher3 movement pose Run(1.0, 0.0)3
+PASS: Banditarcher3 movement pose Walk(0.0, 1.0)0
+PASS: Banditarcher3 movement pose Walk(0.0, 1.0)1
+PASS: Banditarcher3 movement pose Walk(0.0, 1.0)2
+PASS: Banditarcher3 movement pose Walk(0.0, 1.0)3
+PASS: Banditarcher3 movement pose Run(0.0, 1.0)0
+PASS: Banditarcher3 movement pose Run(0.0, 1.0)1
+PASS: Banditarcher3 movement pose Run(0.0, 1.0)2
+PASS: Banditarcher3 movement pose Run(0.0, 1.0)3
+PASS: Banditarcher3 movement pose Walk(0.0, -1.0)0
+PASS: Banditarcher3 movement pose Walk(0.0, -1.0)1
+PASS: Banditarcher3 movement pose Walk(0.0, -1.0)2
+PASS: Banditarcher3 movement pose Walk(0.0, -1.0)3
+PASS: Banditarcher3 movement pose Run(0.0, -1.0)0
+PASS: Banditarcher3 movement pose Run(0.0, -1.0)1
+PASS: Banditarcher3 movement pose Run(0.0, -1.0)2
+PASS: Banditarcher3 movement pose Run(0.0, -1.0)3
+PASS: Banditarcher3 directional strike 0
+PASS: Banditarcher3 directional strike 1
+PASS: Banditarcher3 directional strike 2
+PASS: Banditarcher3 directional strike 3
+PASS: Banditarcher3 directional strike 4
+PASS: Banditarcher3 directional strike 5
+PASS: Banditarcher3 directional strike 6
+PASS: Banditarcher3 directional strike 7
+PASS: Banditarcher3 hurt poses
+PASS: Banditarcher3 death holds final pose
+Vanguard [91mdamaged[39m by Clubbandit1! HP: 82[0m
+PASS: club deals its authored melee damage
+PASS: bow release does not apply instant damage
+PASS: one arrow per release
+PASS: arrow travels at configured speed
+Vanguard [91mdamaged[39m by Banditarcher3! HP: 86[0m
+PASS: swept arrow hits target once
+PASS: spent arrow cannot hit again
+PASS: frontal block uses arrow flight direction
+PASS: dodge immunity rejects arrow damage
+PASS: ally blocks arrow without friendly damage
+PASS: swept arrow cannot tunnel through a thin wall beside shooter
+PASS: arrow expires at maximum reach
+PASS: knockdown interrupts bow draw before release
+PASS: archer recovers after one second
+PASS: archer retreats from close melee threat
+PASS: archer commits a diagonal aimed shot
+PASS: archer repositions when an ally blocks the shot
+Vanguard [91mdamaged[39m by Banditarcher3! HP: 86[0m
+PASS: live archer AI winds up, releases and lands an arrow
+PASS: live archer maintains a ranged position
+PASS: projectile safely expires when its source is freed
+BANDIT_RESULT: 98 assertions, 0 failures
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

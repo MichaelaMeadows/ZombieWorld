@@ -1,0 +1,16 @@
+import os
+
+env = SConscript("../vendor/godot-cpp/SConstruct")
+env.Append(CPPPATH=["upstream/Source/Birthright/Campaign", "bridge"])
+env.Append(CPPDEFINES=["_CRT_SECURE_NO_WARNINGS"])
+if env["platform"] == "windows":
+    env.Append(CXXFLAGS=["/std:c++17", "/EHsc", "/utf-8"])
+core = Glob("upstream/Source/Birthright/Campaign/*.cpp")
+objects = env.SharedObject(core)
+library = env.SharedLibrary(
+    "../../addons/campaign/bin/campaign" + env["suffix"] + env["SHLIBSUFFIX"],
+    objects + env.SharedObject(Glob("bridge/*.cpp")))
+Default(library)
+if ARGUMENTS.get("build_tests", "no") == "yes":
+    tests = env.Program("build/campaign_tests", objects + Glob("upstream/tools/World/*.cpp"))
+    Default(tests)

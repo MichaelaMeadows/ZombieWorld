@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ModularSpriteLayer" format=3]
+
+[ext_resource type="Script" path="res://game/presentation/modular_sprite_layer.gd" id="1_a51n3"]
+
+[ext_resource type="Texture2D" path="res://assets/art/modular/two_handed/weapon.png" id="2_texture"]
+
+[resource]
+script = ExtResource("1_a51n3")
+sheet = ExtResource("2_texture")
+label = "Hero weapon"
+family = &"two_handed"
+rig_id = &"human_two_handed_v1"
+depth = -1
+pivots = Array[Vector2]([Vector2(-7.0, 181.0), Vector2(-1.0, 180.0), Vector2(0.0, 179.0), Vector2(0.0, 180.0), Vector2(4.0, 180.0), Vector2(4.0, 181.0), Vector2(3.0, 180.0), Vector2(4.0, 180.0), Vector2(21.0, 185.0), Vector2(33.0, 184.0), Vector2(31.0, 184.0), Vector2(32.0, 184.0), Vector2(5.0, 205.0), Vector2(4.0, 206.0), Vector2(7.0, 206.0), Vector2(6.0, 206.0), Vector2(9.0, 179.0), Vector2(20.0, 174.0), Vector2(15.0, 174.0), Vector2(21.0, 179.0), Vector2(18.0, 186.0), Vector2(20.0, 186.0), Vector2(22.0, 186.0), Vector2(15.0, 189.0), Vector2(9.0, 203.0), Vector2(12.0, 203.0), Vector2(10.0, 203.0), Vector2(7.0, 203.0), Vector2(55.0, 179.0), Vector2(34.0, 176.0), Vector2(-44.0, 123.0), Vector2(6.0, 185.0), Vector2(73.0, 103.0), Vector2(36.0, 160.0), Vector2(39.0, 109.0), Vector2(3.0, 183.0), Vector2(19.0, 114.0), Vector2(95.0, 167.0), Vector2(-24.0, 112.0), Vector2(3.0, 177.0), Vector2(10.0, 190.0), Vector2(30.0, 216.0), Vector2(-24.0, 200.0), Vector2(15.0, 195.0), Vector2(5.0, 197.0), Vector2(8.0, 201.0), Vector2(14.0, 196.0), Vector2(5.0, 191.0), Vector2(21.0, 229.0), Vector2(59.0, 209.0), Vector2(122.0, 165.0), Vector2(117.0, 137.0), Vector2(75.0, 200.0), Vector2(125.0, 209.0), Vector2(37.0, 113.0), Vector2(34.0, 117.0)])
+frame_depths = PackedInt32Array()
+frame_scales = PackedVector2Array()
+frame_rotations = PackedFloat32Array()
+
+
+
+regions = Array[Rect2]([Rect2(115, 44, 128, 123), Rect2(365, 45, 130, 126), Rect2(620, 46, 128, 125), Rect2(876, 45, 130, 126), Rect2(1128, 45, 129, 127), Rect2(1384, 44, 124, 127), Rect2(1641, 45, 128, 126), Rect2(1896, 45, 127, 126), Rect2(97, 296, 127, 126), Rect2(341, 297, 127, 126), Rect2(599, 297, 125, 125), Rect2(854, 297, 127, 125), Rect2(1112, 296, 126, 126), Rect2(1369, 295, 124, 126), Rect2(1622, 295, 125, 127), Rect2(1879, 295, 124, 127), Rect2(99, 558, 130, 125), Rect2(344, 563, 141, 121), Rect2(605, 563, 146, 115), Rect2(855, 558, 135, 125), Rect2(1124, 551, 115, 132), Rect2(1378, 551, 114, 133), Rect2(1632, 551, 116, 133), Rect2(1895, 548, 114, 134), Rect2(84, 810, 131, 126), Rect2(337, 810, 134, 124), Rect2(595, 810, 128, 125), Rect2(854, 810, 129, 125), Rect2(1077, 814, 173, 78), Rect2(1364, 812, 160, 58), Rect2(1653, 865, 200, 60), Rect2(1894, 808, 120, 133), Rect2(35, 1146, 142, 102), Rect2(328, 1089, 162, 69), Rect2(596, 1135, 192, 60), Rect2(873, 1066, 113, 133), Rect2(1083, 1135, 179, 60), Rect2(1303, 1077, 148, 63), Rect2(1633, 1132, 183, 60), Rect2(1897, 1072, 126, 129), Rect2(98, 1315, 121, 137), Rect2(334, 1289, 168, 99), Rect2(609, 1300, 164, 121), Rect2(861, 1310, 133, 139), Rect2(1127, 1308, 128, 140), Rect2(1380, 1304, 110, 147), Rect2(1630, 1309, 134, 140), Rect2(1895, 1314, 126, 138), Rect2(87, 1532, 77, 177), Rect2(305, 1552, 65, 172), Rect2(453, 1586, 130, 162), Rect2(714, 1614, 135, 141), Rect2(1057, 1561, 115, 151), Rect2(1273, 1547, 153, 89), Rect2(1597, 1643, 172, 95), Rect2(1856, 1639, 165, 106)])

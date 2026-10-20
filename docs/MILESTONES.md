@@ -50,3 +50,25 @@ Ranged combat is deferred until the initial sword encounter is approved.
 
 Next recommended task: play the sword encounter, tune the committed definitions,
 then implement allied guard/follow/retreat through the same intent interface.
+
+## Living world migration — first slice, 2026-10-20
+
+The user redirected world development toward reusing DarkLineage's world, items,
+lineage and economy, excluding legacy save migration and battle integration.
+This supersedes the generic simulation/persistence direction above.
+
+Imported the portable production campaign core and Duvaleia geography. Added a
+Windows native Godot bridge, persistent campaign session, background time
+advancement, world map, area/market inspectors, lineage browser, item equipment,
+realm/estate views, event journal and fresh Godot save/backup recovery. The
+existing combat remains separately accessible.
+
+Verification: debug/release native builds; 150/150 original portable tests;
+45 headless bridge assertions and 46 rendered assertions; visual inspection at
+1280×720; existing import, combat, movement, zombie, encounter and layout checks.
+The inherited shutdown resource warning remains. No export-package or large
+rendered-combat performance claim is made.
+
+Next world work: expose existing travel/social/estate commands and deepen
+genealogy/economy navigation. See [World systems](WORLD_SYSTEMS.md) and the revised
+[migration plan](DARKLINEAGE_MIGRATION_PLAN.md).

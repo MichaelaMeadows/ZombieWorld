@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ModularSpriteRig" format=3]
+
+[ext_resource type="Script" path="res://game/presentation/modular_sprite_rig.gd" id="1"]
+[ext_resource type="Script" path="res://game/presentation/modular_sprite_layer.gd" id="2"]
+[ext_resource type="Resource" path="res://game/content/modular/two_handed/body.tres" id="3"]
+[ext_resource type="Resource" path="res://game/content/modular/two_handed/armor.tres" id="4"]
+[ext_resource type="Resource" path="res://game/content/modular/two_handed/weapon.tres" id="5"]
+
+
+[resource]
+script = ExtResource("1")
+label = "Greatsword hero"
+family = &"two_handed"
+rig_id = &"human_two_handed_v1"
+player_walk_stride = 100.0
+player_run_stride = 132.0
+player_pose_offsets = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, -5, 0, -2, 0, 0, 0, -2, 0, -9, 0, -5, 0, -8, 0, -6, 0, -6, 0, 6, 0, -7, 0, -7, 0, -4, 0, 7, 0, -1, 0, -5, 0, -7, 0, 13, 0, -7, 0, 8, 0, -3, 0, 3, 0, -4, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+body = ExtResource("3")
+equipment = Array[ExtResource("2")]([ExtResource("4"), ExtResource("5")])
+

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttackDefinition" load_steps=2 format=3]
+[ext_resource type="Script" path="res://game/combat/attack_definition.gd" id="1"]
+[resource]
+script = ExtResource("1")
+label = "Club smash"
+startup = 0.6
+active = 0.15
+recovery = 0.65
+damage = 28
+reach = 70
+arc_degrees = 110
+stamina_cost = 25
+stagger = 0.42
+knockback = 210
+heavy = true
+delivery = 0

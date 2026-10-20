@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ModularSpriteLayer" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/presentation/modular_sprite_layer.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/modular/bow/weapon.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+label = "Archer weapon"
+family = &"bow"
+rig_id = &"human_bow_v1"
+slot = &"weapon"
+sheet = ExtResource("2")
+depth = -1
+
+regions = Array[Rect2]([Rect2(0, 0, 256, 256), Rect2(256, 0, 256, 256), Rect2(512, 0, 256, 256), Rect2(768, 0, 256, 256), Rect2(1024, 0, 256, 256), Rect2(1280, 0, 256, 256), Rect2(1536, 0, 256, 256), Rect2(1792, 0, 256, 256), Rect2(0, 256, 256, 256), Rect2(256, 256, 256, 256), Rect2(512, 256, 256, 256), Rect2(768, 256, 256, 256), Rect2(1024, 256, 256, 256), Rect2(1280, 256, 256, 256), Rect2(1536, 256, 256, 256), Rect2(1792, 256, 256, 256), Rect2(0, 512, 256, 256), Rect2(256, 512, 256, 256), Rect2(512, 512, 256, 256), Rect2(768, 512, 256, 256), Rect2(1024, 512, 256, 256), Rect2(1280, 512, 256, 256), Rect2(1536, 512, 256, 256), Rect2(1792, 512, 256, 256), Rect2(0, 768, 256, 256), Rect2(256, 768, 256, 256), Rect2(512, 768, 256, 256), Rect2(768, 768, 256, 256), Rect2(1024, 768, 256, 256), Rect2(1280, 768, 256, 256), Rect2(1536, 768, 256, 256), Rect2(1792, 768, 256, 256), Rect2(0, 1024, 256, 256), Rect2(256, 1024, 256, 256), Rect2(512, 1024, 256, 256), Rect2(768, 1024, 256, 256), Rect2(1024, 1024, 256, 256), Rect2(1280, 1024, 256, 256), Rect2(1536, 1024, 256, 256), Rect2(1792, 1024, 256, 256), Rect2(1280, 768, 256, 256), Rect2(1280, 768, 256, 256), Rect2(1536, 768, 256, 256), Rect2(1280, 768, 256, 256), Rect2(1024, 1280, 256, 256), Rect2(1280, 1280, 256, 256), Rect2(1536, 1280, 256, 256), Rect2(1792, 1280, 256, 256), Rect2(0, 1536, 256, 256), Rect2(256, 1536, 256, 256), Rect2(512, 1536, 256, 256), Rect2(768, 1536, 256, 256), Rect2(1024, 1536, 256, 256), Rect2(1280, 1536, 256, 256), Rect2(1536, 1536, 256, 256), Rect2(1792, 1536, 256, 256)])
+pivots = Array[Vector2]([Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(69, 150), Vector2(50, 155), Vector2(63, 166), Vector2(71, 156), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220), Vector2(128, 220)])
+frame_rotations = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.785398, -0.785398, -0.785398, -0.785398, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+

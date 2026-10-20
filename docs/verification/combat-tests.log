@@ -37,15 +37,46 @@ PASS: startup cannot be dodge-canceled
 PASS: recovery can be dodge-canceled
 PASS: localized hit-stop does not freeze another actor
 PASS: solid obstacles block melee damage
+PASS: greatsword trades speed for reach and damage
+PASS: greatsword secondary is heavier and slower
+PASS: both greatsword attacks author 30 percent knockdown
+PASS: seeded probability distribution is near 30 percent (3028/10000)
+test_enemy [91mdamaged[39m by test_hero! HP: 28[0m
+PASS: knockdown interrupts even armored enemies
+PASS: knocked-down actor cannot attack or dodge
+PASS: knockdown disables voluntary movement
+PASS: knockdown disables block
+PASS: knockdown presents a prone body
+PASS: enemy remains disabled through 990 ms
+PASS: enemy stands and can act at one second, including hit-stop
+PASS: reapplication refreshes without duplicate stacks
+PASS: refreshed effect lasts one second from reapplication
+PASS: refreshed effect expires on time
+PASS: blocked hits do not apply knockdown
+PASS: invulnerable targets do not receive status
+PASS: friendly hits do not apply statuses
+test_enemy [91mdamaged[39m by test_hero! HP: 28[0m
+PASS: failed proc leaves target without status
+test_enemy [91mdamaged[39m by test_hero! HP: 0[0m
+PASS: death clears statuses and does not reapply knockdown
+PASS: independent slow survives knockdown without blocking actions
+PASS: slow expires and restores movement
+PASS: generic root permits attacks but prevents dodge movement
+PASS: root stops movement during an existing dodge
+PASS: status clock does not advance while gameplay is paused
+test_enemy [91mdamaged[39m by test_hero! HP: 28[0m
+PASS: extended-range swing delivers damage and status through real hit resolver
 PASS: arena has one player and three autonomous melee opponents
+PASS: default arena equips greatsword
+PASS: upward greatsword swing uses the attached-weapon back-view animation
 PASS: navigation routes through arena
 PASS: navigation rejects invalid endpoints safely
-PASS: enemy acquires nearby hostile: Raider1
-PASS: enemy acquires nearby hostile: Raider2
-PASS: enemy acquires nearby hostile: IronWarden
-PASS: enemy recovers when target dies: Raider1
-PASS: enemy recovers when target dies: Raider2
-PASS: enemy recovers when target dies: IronWarden
+PASS: enemy acquires nearby hostile: Zombie1
+PASS: enemy acquires nearby hostile: Zombie2
+PASS: enemy acquires nearby hostile: ZombieBrute
+PASS: enemy recovers when target dies: Zombie1
+PASS: enemy recovers when target dies: Zombie2
+PASS: enemy recovers when target dies: ZombieBrute
 PASS: pause modal pauses gameplay
 PASS: pause has a connected resume action
 PASS: resume button restores gameplay
@@ -55,7 +86,7 @@ PASS: actual unhandled input reaches shared combat
 PASS: modal suppresses gameplay input
 PASS: preferences serialize
 PASS: preferences round trip
-RESULT: 48 assertions, 0 failures
+RESULT: 75 assertions, 0 failures
 WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
    at: cleanup (core/object/object.cpp:2536)
 ERROR: 1 resources still in use at exit (run with --verbose for details).

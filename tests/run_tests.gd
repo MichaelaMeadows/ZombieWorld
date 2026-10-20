@@ -43,6 +43,7 @@ func reset_pair(a: ArenaActor, b: ArenaActor) -> void:
 		f.combat.block_intent = false
 		f.combat.queued = null
 		f.combat.armor_resistance = false
+		f.combat.statuses.clear()
 	a.position = Vector2(300, 300)
 	b.position = Vector2(350, 300)
 	a.facing = Vector2.RIGHT
@@ -161,6 +162,7 @@ func _run() -> void:
 	step(a, 0.18, true)
 	check(b.health_controller.hp == b.health_controller.max_hp, "solid obstacles block melee damage")
 	wall.queue_free()
+	await _test_statuses(a, b)
 	for f in fighters:
 		f.queue_free()
 	fighters.clear()
@@ -171,6 +173,12 @@ func _run() -> void:
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	check(arena.actors.size() == 4, "arena has one player and three autonomous melee opponents")
+	check(arena.hero.loadout.two_handed and arena.hero.light_attack.reach == 102, "default arena equips greatsword")
+	arena.hero.combat.current = arena.hero.light_attack
+	arena.hero.combat.swing_direction = Vector2.UP
+	arena.hero._update_sprite()
+	check(arena.hero.body_sprite.get_meta("clip") == "attack_n", "upward greatsword swing uses the layered back-view animation")
+	arena.hero.combat.current = null
 	check(arena.find_path(Vector2(600, 540), Vector2(1000, 440)).size() > 0, "navigation routes through arena")
 	check(arena.find_path(Vector2(-100, -100), Vector2(1000, 440)).is_empty(), "navigation rejects invalid endpoints safely")
 	arena.hero.position = Vector2(900, 540)
@@ -235,6 +243,112 @@ func _run() -> void:
 	await get_tree().process_frame
 	print("RESULT: %d assertions, %d failures" % [assertions, failures])
 	get_tree().quit(1 if failures else 0)
+
+func _test_statuses(a: ArenaActor, b: ArenaActor) -> void:
+	var sweep: AttackDefinition = preload("res://game/content/greatsword_cut.tres")
+	var cleave: AttackDefinition = preload("res://game/content/greatsword_cleave.tres")
+	check(sweep.damage > a.light_attack.damage and sweep.reach > a.light_attack.reach and sweep.duration() > a.light_attack.duration(), "greatsword trades speed for reach and damage")
+	check(cleave.damage > a.heavy_attack.damage and cleave.duration() > a.heavy_attack.duration(), "greatsword secondary is heavier and slower")
+	check(sweep.on_hit_effects[0].chance == 0.3 and cleave.on_hit_effects[0].chance == 0.3, "both greatsword attacks author 30 percent knockdown")
+	var rng := RandomNumberGenerator.new()
+	rng.seed = 82026
+	var procs := 0
+	for i in range(10000):
+		if sweep.on_hit_effects[0].rolls_success(rng):
+			procs += 1
+	check(procs > 2800 and procs < 3200, "seeded probability distribution is near 30 percent (%d/10000)" % procs)
+	var forced: AttackDefinition = sweep.duplicate()
+	var application: StatusApplication = sweep.on_hit_effects[0].duplicate()
+	application.chance = 1
+	forced.on_hit_effects = [application]
+	reset_pair(a, b)
+	b.combat.armor_resistance = true
+	b.combat.request_attack(b.heavy_attack)
+	b.combat.receive_hit(forced, a)
+	check(b.combat.statuses.has(&"knockdown") and b.combat.current == null, "knockdown interrupts even armored enemies")
+	check(not b.combat.can_act() and not b.combat.request_dodge(Vector2.UP) and not b.combat.request_attack(a.light_attack), "knocked-down actor cannot attack or dodge")
+	check(b.combat.statuses.blocks_movement(), "knockdown disables voluntary movement")
+	b.combat.block_intent = true
+	check(not b.combat.is_blocking(), "knockdown disables block")
+	step(b, 0.79)
+	b._update_sprite()
+	check(absf(b.body_sprite.rotation) > 1.4, "knockdown presents a prone body")
+	step(b, 0.20)
+	check(b.combat.statuses.has(&"knockdown"), "enemy remains disabled through 990 ms")
+	step(b, 0.01)
+	b._update_sprite()
+	check(not b.combat.statuses.has(&"knockdown") and b.combat.can_act() and b.body_sprite.rotation == 0, "enemy stands and can act at one second, including hit-stop")
+	reset_pair(a, b)
+	b.combat.statuses.apply(application.effect, a.entity_id)
+	step(b, 0.7)
+	b.combat.statuses.apply(application.effect, a.entity_id)
+	check(b.combat.statuses.active.size() == 1, "reapplication refreshes without duplicate stacks")
+	step(b, 0.99)
+	check(b.combat.statuses.has(&"knockdown"), "refreshed effect lasts one second from reapplication")
+	step(b, 0.01)
+	check(not b.combat.statuses.has(&"knockdown"), "refreshed effect expires on time")
+	reset_pair(a, b)
+	b.combat.block_intent = true
+	b.combat.receive_hit(forced, a)
+	check(not b.combat.statuses.has(&"knockdown"), "blocked hits do not apply knockdown")
+	reset_pair(a, b)
+	b.combat.invulnerability = 0.19
+	b.combat.receive_hit(forced, a)
+	check(not b.combat.statuses.has(&"knockdown"), "invulnerable targets do not receive status")
+	reset_pair(a, b)
+	b.team = 0
+	b.combat.receive_hit(forced, a)
+	check(b.combat.statuses.active.is_empty(), "friendly hits do not apply statuses")
+	reset_pair(a, b)
+	application.chance = 0
+	b.combat.receive_hit(forced, a)
+	check(b.combat.statuses.active.is_empty(), "failed proc leaves target without status")
+	application.chance = 1
+	reset_pair(a, b)
+	b.combat.statuses.apply(application.effect, a.entity_id)
+	b.health_controller.hp = 1
+	b.combat.receive_hit(forced, a)
+	check(b.combat.dead and b.combat.statuses.active.is_empty(), "death clears statuses and does not reapply knockdown")
+	reset_pair(a, b)
+	var slow := StatusEffectDefinition.new()
+	slow.id = &"chill"
+	slow.label = "Chilled"
+	slow.duration = 2.0
+	slow.movement_multiplier = 0.5
+	b.combat.statuses.apply(slow, a.entity_id)
+	b.combat.statuses.apply(application.effect, a.entity_id)
+	step(b, 1.0)
+	check(b.combat.can_act() and b.combat.statuses.movement_scale() == 0.5, "independent slow survives knockdown without blocking actions")
+	step(b, 1.0)
+	check(b.combat.statuses.active.is_empty() and b.combat.statuses.movement_scale() == 1, "slow expires and restores movement")
+	var root_effect := StatusEffectDefinition.new()
+	root_effect.id = &"root"
+	root_effect.blocks_movement = true
+	b.combat.statuses.apply(root_effect, a.entity_id)
+	check(b.combat.can_act() and not b.combat.request_dodge(Vector2.UP), "generic root permits attacks but prevents dodge movement")
+	reset_pair(a, b)
+	b.combat.request_dodge(Vector2.UP)
+	b.combat.statuses.apply(root_effect, a.entity_id)
+	var rooted_position := b.position
+	b._physics_process(0.016)
+	check(b.position.is_equal_approx(rooted_position), "root stops movement during an existing dodge")
+	reset_pair(a, b)
+	b.combat.statuses.apply(application.effect, a.entity_id)
+	var remaining: float = b.combat.statuses.active[&"knockdown"].remaining
+	b.set_physics_process(true)
+	get_tree().paused = true
+	await get_tree().process_frame
+	await get_tree().process_frame
+	check(b.combat.statuses.active[&"knockdown"].remaining == remaining, "status clock does not advance while gameplay is paused")
+	b.set_physics_process(false)
+	get_tree().paused = false
+	reset_pair(a, b)
+	b.position = Vector2(395, 300)
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	a.combat.request_attack(forced)
+	step(a, 0.4, true)
+	check(b.health_controller.hp == b.health_controller.max_hp - 38 and b.combat.statuses.has(&"knockdown"), "extended-range swing delivers damage and status through real hit resolver")
 
 func find_button(node: Node, text: String) -> Button:
 	if node is Button and node.text == text:

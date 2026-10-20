@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Autonomous World — The Briarwatch"
 config/version="1.9.4"
 config/tags=PackedStringArray("template")
-run/main_scene="res://game/arena.tscn"
+run/main_scene="res://game/world/world.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.png"
 
@@ -28,6 +28,7 @@ SceneManager="*res://scripts/autoloads/SceneManager.gd"
 DataManager="*res://scripts/autoloads/DataManager.gd"
 Debugger="*res://scripts/autoloads/debugger.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+CampaignSession="*res://game/campaign/campaign_session.gd"
 
 [dialogue_manager]
 
@@ -167,7 +168,7 @@ inventory={
 [internationalization]
 
 locale/translations=PackedStringArray("res://local/translations.en.translation", "res://local/translations.it.translation")
-locale/translations_pot_files=PackedStringArray("res://dialogues/start.dialogue", "res://dialogues/commons.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/commons.dialogue", "res://dialogues/start.dialogue")
 
 [layer_names]
 

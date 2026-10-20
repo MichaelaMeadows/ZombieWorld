@@ -1,0 +1,20 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+Unicode parsing error, some characters were replaced with � (U+FFFD): Invalid UTF-8 leading byte (97)
+Unicode parsing error, some characters were replaced with � (U+FFFD): Invalid UTF-8 leading byte (97)
+Zombie1 [91mdamaged[39m by Vanguard! HP: 28[0m
+Vanguard [91mdamaged[39m by Zombie1! HP: 88[0m
+Zombie1 [91mdamaged[39m by Vanguard! HP: 0[0m
+Zombie2 [91mdamaged[39m by Vanguard! HP: 28[0m
+Vanguard [91mdamaged[39m by Zombie2! HP: 76[0m
+Vanguard [91mdamaged[39m by Zombie2! HP: 64[0m
+Vanguard [91mdamaged[39m by ZombieBrute! HP: 46[0m
+Vanguard [91mdamaged[39m by Zombie2! HP: 34[0m
+Vanguard [91mdamaged[39m by ZombieBrute! HP: 16[0m
+Vanguard [91mdamaged[39m by Zombie2! HP: 4[0m
+Vanguard [91mdamaged[39m by ZombieBrute! HP: 0[0m
+ENCOUNTER_REPORT: {"actions":5,"actor_count":4,"hero_health":0,"impacts":11,"max_ai_decision_us":35,"mean_frame_ms":16.6666666666666,"p95_frame_ms":16.6666666666667,"physics_frames":720,"rendered":false,"renderer":"","victory":false}
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

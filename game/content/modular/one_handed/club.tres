@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ModularSpriteRig" load_steps=7 format=3]
+[ext_resource type="Script" path="res://game/presentation/modular_sprite_rig.gd" id="1"]
+[ext_resource type="Script" path="res://game/presentation/modular_sprite_layer.gd" id="2"]
+[ext_resource type="Resource" path="res://game/content/modular/one_handed/body.tres" id="3"]
+[ext_resource type="Resource" path="res://game/content/modular/one_handed/armor.tres" id="4"]
+[ext_resource type="Resource" path="res://game/content/modular/one_handed/weapon.tres" id="5"]
+[ext_resource type="Resource" path="res://game/content/modular/one_handed/foreground.tres" id="6"]
+[resource]
+script = ExtResource("1")
+label = "Club bandit"
+family = &"one_handed"
+rig_id = &"human_one_handed_v1"
+body = ExtResource("3")
+equipment = Array[ExtResource("2")]([ExtResource("4"), ExtResource("5"), ExtResource("6")])

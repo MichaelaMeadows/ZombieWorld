@@ -17,7 +17,16 @@ function Invoke-Check([string]$Name, [string[]]$EngineArguments, [string]$Marker
     Write-Output "PASS $Name"
 }
 Invoke-Check 'milestone2-import' @('--headless','--editor','--import','--quit')
-Invoke-Check 'combat-tests' @('--headless','res://tests/run_tests.tscn','--quit-after','600') '48 assertions, 0 failures'
+Invoke-Check 'combat-tests' @('--headless','res://tests/run_tests.tscn','--quit-after','600') '0 failures'
+Invoke-Check 'combat-responsiveness-tests' @('--headless','res://tests/combat_responsiveness_tests.tscn','--fixed-fps','60','--quit-after','600') 'RESPONSIVENESS_RESULT:'
+Invoke-Check 'movement-tests' @('--headless','res://tests/movement_direction_tests.tscn','--fixed-fps','60','--quit-after','600') '0 failures'
+Invoke-Check 'player-locomotion-tests' @('--headless','res://tests/player_locomotion_tests.tscn','--fixed-fps','60','--quit-after','600') 'PLAYER_LOCOMOTION_RESULT:'
+Invoke-Check 'dodge-stamina-tests' @('--headless','res://tests/dodge_stamina_tests.tscn','--quit-after','600') 'DODGE_STAMINA_RESULT:'
+Invoke-Check 'greatsword-swing-tests' @('--headless','res://tests/greatsword_swing_tests.tscn','--quit-after','600') 'GREATSWORD_SWING_RESULT:'
+Invoke-Check 'bandit-tests' @('--headless','res://tests/bandit_tests.tscn','--fixed-fps','60','--quit-after','600') '0 failures'
+Invoke-Check 'modular-tests' @('--headless','res://tests/modular_sprite_tests.tscn','--quit-after','600') '0 failures'
+Invoke-Check 'modular-assets-tests' @('--headless','res://tests/modular_asset_tests.tscn','--quit-after','600') '0 failures'
+Invoke-Check 'zombie-tests-runtime' @('--headless','res://tests/zombie_tests.tscn','--fixed-fps','60','--quit-after','600') 'ZOMBIE_RESULT: 59 assertions, 0 failures'
 Invoke-Check 'encounter-headless' @('--headless','res://tests/encounter_smoke.tscn','--fixed-fps','60','--quit-after','900') 'ENCOUNTER_REPORT:'
 Invoke-Check 'layout-headless' @('--headless','res://tests/layout_smoke.tscn','--quit-after','120') 'LAYOUT_RESULT: 0 errors'
 if ($Rendered) {

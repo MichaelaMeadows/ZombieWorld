@@ -1,6 +1,11 @@
 extends Node2D
 
 const ACTOR = preload("res://game/actors/actor.tscn")
+@export var player_loadout: WeaponLoadout = preload("res://game/content/greatsword_loadout.tres")
+@export var enemy_archetypes: Array[ActorArchetype] = []
+@export var encounter_label := "zombies"
+@export var encounter_hint := "Two shamblers   •   One brute   •   Watch their hands"
+@export var include_warband := true
 var hero: ArenaActor
 var actors: Array[ArenaActor] = []
 var camera: Camera2D
@@ -26,6 +31,7 @@ func _ready() -> void:
 	hero = ACTOR.instantiate()
 	hero.name = "Vanguard"
 	hero.player_controlled = true
+	hero.loadout = player_loadout
 	hero.arena = self
 	hero.position = Vector2(600, 540)
 	$Actors.add_child(hero)
@@ -38,20 +44,63 @@ func _ready() -> void:
 	camera.limit_right = 1536
 	camera.limit_bottom = 1024
 	hero.add_child(camera)
-	for index in range(3):
+	if include_warband:
+		_spawn_warband()
+	for index in range(3 if enemy_archetypes.is_empty() else enemy_archetypes.size()):
 		var enemy: ArenaActor = ACTOR.instantiate()
-		enemy.name = "IronWarden" if index == 2 else "Raider%d" % (index + 1)
+		enemy.name = "ZombieBrute" if index == 2 else "Zombie%d" % (index + 1)
 		enemy.entity_id = "briarwatch_enemy_%d" % index
 		enemy.team = 1
 		enemy.heavy = index == 2
+		if not enemy_archetypes.is_empty():
+			enemy.archetype = enemy_archetypes[index]
+			enemy.name = enemy.archetype.label.replace(" ", "") + str(index + 1)
+			enemy.heavy = false
 		enemy.arena = self
-		enemy.position = [Vector2(1000, 440), Vector2(1155, 650), Vector2(1260, 485)][index]
+		enemy.position = [Vector2(1000, 440), Vector2(1155, 650), Vector2(1260, 485)][index % 3]
 		$Actors.add_child(enemy)
 		actors.append(enemy)
 	hud = preload("res://game/ui/arena_hud.gd").new()
 	hud.arena = self
 	hud.hero = hero
 	add_child(hud)
+
+func _spawn_warband() -> void:
+	var party: Dictionary = CampaignSession.warband()
+	var troops: Array = party.get("troops", [])
+	if troops.is_empty():
+		return
+	# Pick distinct reachable grid centers, nearest the player's rear first.
+	# Never silently truncate the roster to a fixed set of authored positions.
+	var positions: Array[Vector2] = []
+	for y in range(2, 30, 2):
+		for x in range(2, 46, 2):
+			var cell := Vector2i(x, y)
+			if navigation.is_point_solid(cell):
+				continue
+			var point := Vector2(x * 32 + 16, y * 32 + 16)
+			if point.distance_to(hero.position) < 48 or point.x > 850:
+				continue
+			if not find_path(hero.position, point).is_empty():
+				positions.append(point)
+	positions.sort_custom(func(a: Vector2, b: Vector2):
+		return a.distance_squared_to(hero.position + Vector2(-80, 0)) < b.distance_squared_to(hero.position + Vector2(-80, 0)))
+	for index in troops.size():
+		var troop: Dictionary = troops[index]
+		var ally: ArenaActor = ACTOR.instantiate()
+		ally.name = "Warband_" + troop.id
+		ally.campaign_unit_id = troop.id
+		ally.entity_id = "%s/troop/%s" % [party.world_id, troop.id]
+		ally.human = true
+		ally.team = hero.team
+		ally.loadout = preload("res://game/content/sword_loadout.tres")
+		ally.starting_health = 90 + (25 if troop.get("trained", false) else 0)
+		ally.arena = self
+		ally.position = positions[index % positions.size()] if not positions.is_empty() else hero.position + Vector2(-64, 0)
+		ally.follow_offset = Vector2(-64 - (index / 5) * 48, (index % 5 - 2) * 44)
+		$Actors.add_child(ally)
+		actors.append(ally)
+	record_event("%d warband troops joined you." % troops.size())
 
 func _process(delta: float) -> void:
 	elapsed += delta
@@ -69,7 +118,7 @@ func _process(delta: float) -> void:
 			record_event("Clearing secured. Return to the watchtower to recover.")
 
 func _bind_controls() -> void:
-	var bindings := {"aw_light": MOUSE_BUTTON_LEFT, "aw_block": MOUSE_BUTTON_RIGHT, "aw_heavy": KEY_Q, "aw_dodge": KEY_SPACE, "aw_debug": KEY_F3, "aw_reset": KEY_R, "aw_interact": KEY_E}
+	var bindings := {"aw_light": MOUSE_BUTTON_LEFT, "aw_block": MOUSE_BUTTON_RIGHT, "aw_heavy": KEY_Q, "aw_dodge": KEY_SPACE, "aw_run": KEY_SHIFT, "aw_debug": KEY_F3, "aw_reset": KEY_R, "aw_interact": KEY_E}
 	for action in bindings:
 		if InputMap.has_action(action):
 			continue
@@ -132,7 +181,7 @@ func find_path(from: Vector2, to: Vector2) -> PackedVector2Array:
 
 func separation(subject: ArenaActor) -> Vector2:
 	var result := Vector2.ZERO
-	# Local encounter only, bounded to four actors; no whole-world tree queries.
+	# Local encounter roster only; no whole-world tree queries.
 	for other in actors:
 		if other == subject or other.dead:
 			continue

@@ -1,0 +1,49 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PASS: fresh campaign
+PASS: fresh warband starts empty
+PASS: empty party spawns hero plus original enemies
+PASS: capital has volunteers for fixture
+PASS: recruit three through native command
+PASS: recruits leave civilian population
+PASS: only owned campaign troops returned
+PASS: invalid recruitment rejected
+PASS: roster checkpoint restores
+PASS: stable troop identities persist
+PASS: all three troops accompany hero
+PASS: human AI ally uses player team
+PASS: spawn binds campaign troop ID
+PASS: unique combat identity
+PASS: ally uses the shared human equipment rig
+PASS: untrained peasant health initialized once
+PASS: ally spawns clear of props and hero
+PASS: human AI ally uses player team
+PASS: spawn binds campaign troop ID
+PASS: unique combat identity
+PASS: ally uses the shared human equipment rig
+PASS: untrained peasant health initialized once
+PASS: ally spawns clear of props and hero
+PASS: human AI ally uses player team
+PASS: spawn binds campaign troop ID
+PASS: unique combat identity
+PASS: ally uses the shared human equipment rig
+PASS: untrained peasant health initialized once
+PASS: ally spawns clear of props and hero
+PASS: allies have distinct spaced spawn positions
+PASS: ally chooses hostile rather than hero or nearby ally
+PASS: ally requests shared sword attack
+Zombie1 [91mdamaged[39m by Warband_1! HP: 44[0m
+PASS: ally attack damages enemy
+PASS: same-team troop ignores friendly sword arc
+PASS: enemy targets nearest living opponent including allies
+PASS: ally follows hero when no hostiles remain
+PASS: sandbox fighting and losses do not mutate campaign
+PASS: re-entering rebuilds full current party without duplicates
+PASS: dismiss validates ownership
+PASS: next entry reflects latest roster
+PASS: empty roster again deploys solo
+WARBAND_RESULT: 41 assertions, 0 failures
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

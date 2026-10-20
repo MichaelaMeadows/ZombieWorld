@@ -1,0 +1,6 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://game/actors/actor.tscn" id="1"]
+[ext_resource type="Resource" path="res://game/content/bandit_club.tres" id="2"]
+[node name="BanditClub" instance=ExtResource("1")]
+team = 1
+archetype = ExtResource("2")

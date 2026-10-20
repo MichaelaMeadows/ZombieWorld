@@ -49,9 +49,9 @@ func _ready() -> void:
 	var title := VBoxContainer.new()
 	title_panel.add_child(title)
 	title.add_child(ArenaDesign.label("THE BRIARWATCH", 28))
-	objective = ArenaDesign.label("01  /  Defeat the three raiders", 15, ArenaDesign.MUTED)
+	objective = ArenaDesign.label("01  /  Defeat the " + arena.encounter_label, 15, ArenaDesign.MUTED)
 	title.add_child(objective)
-	title.add_child(ArenaDesign.label("Red: raider   •   Violet: iron warden", 14, ArenaDesign.BRONZE))
+	title.add_child(ArenaDesign.label(arena.encounter_hint, 14, ArenaDesign.BRONZE))
 	var footer := PanelContainer.new()
 	footer.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
 	footer.offset_left = 24
@@ -59,7 +59,7 @@ func _ready() -> void:
 	footer.offset_top = -72
 	footer.offset_bottom = -20
 	root.add_child(footer)
-	footer.add_child(ArenaDesign.label("WASD  Move    LMB  Cut    Q  Cleave    RMB  Block    SPACE  Dodge    E  Rest    ESC  Pause    F3  Tune", 16))
+	footer.add_child(ArenaDesign.label("WASD Walk   SHIFT Run   LMB Cut   Q Cleave   RMB Block   SPACE Dodge   E Rest   ESC Pause   F3 Tune", 16))
 	notification = ArenaDesign.label("", 16)
 	notification.position = Vector2(26, 230)
 	notification.add_theme_color_override("font_shadow_color", Color("#111d23"))
@@ -84,12 +84,17 @@ func _process(_delta: float) -> void:
 	hp_text.text = "Vitality  •  %d / %d" % [hero.health_controller.hp, hero.health_controller.max_hp]
 	stamina_bar.value = hero.combat.stamina
 	stamina_text.text = "Stamina  •  %d" % hero.combat.stamina
-	combat_text.text = "SWORD  /  %s" % hero.combat.phase
+	combat_text.text = "%s  /  %s" % [hero.loadout.label.to_upper() if hero.loadout != null else "SWORD", hero.combat.phase]
 	var alive := 0
+	var allies := 0
 	for actor in arena.actors:
 		if actor.team == 1 and not actor.dead:
 			alive += 1
-	objective.text = "01  /  %d raiders remaining" % alive if alive > 0 else "01  /  Clearing secured"
+		elif actor != hero and actor.team == hero.team and not actor.dead:
+			allies += 1
+	objective.text = "01  /  %d %s remaining" % [alive, arena.encounter_label] if alive > 0 else "01  /  Clearing secured"
+	if allies > 0:
+		objective.text += "  ·  %d allies" % allies
 	notification.text = "E  •  Rest at the watchtower" if hero.position.distance_to(Vector2(300, 400)) < 130 else (arena.recent_events[0] if not arena.recent_events.is_empty() else "Enter the sand court. Watch the enemy wind-up.")
 	ending.text = "YOU FELL  ·  R to retry" if hero.dead else ("CLEARING SECURED  ·  R to replay" if arena.encounter_finished else "")
 	if debug_panel.visible:
@@ -207,8 +212,8 @@ func _build_debug() -> void:
 	v.add_child(ArenaDesign.label("COMBAT LAB  /  F3 to close", 16, ArenaDesign.BRONZE))
 	debug_text = ArenaDesign.label("", 13)
 	v.add_child(debug_text)
-	_slider(v, "Light startup", 0.06, 0.3, hero.light_attack.startup, 0.01, func(value: float): hero.light_attack.startup = value)
-	_slider(v, "Light recovery", 0.1, 0.5, hero.light_attack.recovery, 0.01, func(value: float): hero.light_attack.recovery = value)
-	_slider(v, "Heavy startup", 0.25, 0.65, hero.heavy_attack.startup, 0.01, func(value: float): hero.heavy_attack.startup = value)
-	_slider(v, "Sword reach", 40, 90, hero.light_attack.reach, 1, func(value: float): hero.light_attack.reach = value)
+	_slider(v, "Primary startup", 0.06, 1.0, hero.light_attack.startup, 0.01, func(value: float): hero.light_attack.startup = value)
+	_slider(v, "Primary recovery", 0.1, 1.0, hero.light_attack.recovery, 0.01, func(value: float): hero.light_attack.recovery = value)
+	_slider(v, "Secondary startup", 0.25, 1.2, hero.heavy_attack.startup, 0.01, func(value: float): hero.heavy_attack.startup = value)
+	_slider(v, "Weapon reach", 40, 140, hero.light_attack.reach, 1, func(value: float): hero.light_attack.reach = value)
 	v.add_child(ArenaDesign.button("Return focus to combat", func(): get_viewport().gui_release_focus()))

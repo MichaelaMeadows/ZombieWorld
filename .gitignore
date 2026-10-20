@@ -18,3 +18,14 @@ addons/Todo_Manager/todo.cfg
 assets/tiny_swords/
 docs/verification/*-runtime.log
 docs/verification/*-graphical.log
+
+# Reproducible native campaign build dependencies and outputs
+native/vendor/
+native/campaign/.sconsign*
+native/campaign/build/
+native/campaign/**/*.obj
+native/campaign/**/*.os
+native/campaign/**/*.windows.*
+addons/campaign/bin/
+tools/.python-deps/
+tools/world/source/*.tmp

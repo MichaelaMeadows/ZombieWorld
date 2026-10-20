@@ -1,0 +1,23 @@
+Deterministic cleanup after explicit user authorization to finish with pixel/mask editing.
+
+Reproducible script: cleanup_pixels.py (Pillow + numpy).
+
+Weapon:
+- Read accepted weapon-before-mask.png without resizing.
+- Clear measured shoulder/quiver-stub boxes on locomotion frames 8-27.
+- Clear the detached death-pose spill at the left edge of frame 52.
+- Preserve all other RGBA pixels exactly, including release frames.
+- Existing resource registration/remapping/rotation is unchanged.
+
+Foreground:
+- Copy RGBA pixels directly from accepted body.png in the same 2048x1792 space.
+- Use skin/hair color selection, reject components under 80 pixels, close small
+  selection holes, and include a one-pixel boundary.
+- All retained RGBA values are EXACT accepted-body values; no synthesized skin,
+  recoloring, smoothing of image pixels, repositioning or alpha inflation.
+- This restores hands, bare forearms and face over the clothing. Selected boots
+  and hair are harmless exact original pixels and do not cover equipment.
+- New foreground.tres is depth 3, with the unmodified standard pose origins.
+
+Rendered all 56 poses with preview_masked.gd; inspected preview-all-bow.png.
+No additional image generation was used for this cleanup.

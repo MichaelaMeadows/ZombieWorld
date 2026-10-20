@@ -1,3 +1,17 @@
+# The Briarwatch — Godot world and combat project
+
+This project carries forward DarkLineage's world simulation, economy, items and
+lineage with Godot action combat.
+
+- [Game description and vision](Birthright.md)
+- [Divine powers, favor and inheritance](docs/DIVINE_POWER.md)
+- [Proposed divine skill trees](docs/DIVINE_SKILL_TREES.md)
+- [Getting started](GETTING_STARTED.md)
+- [Current world implementation and build instructions](docs/WORLD_SYSTEMS.md)
+- [DarkLineage migration plan](docs/DARKLINEAGE_MIGRATION_PLAN.md)
+
+The original template documentation follows.
+
 # Godot 2D Top-Down Template
 
 <img src="https://alchemy-pot.web.app/res/2d-topdown-template-godot4.png" width="100%">

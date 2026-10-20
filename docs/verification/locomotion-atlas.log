@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+[{"feet":[47.5,377],"pixels":40968,"rect":[574,79,271,380]},{"feet":[46.5,377],"pixels":43500,"rect":[1469,79,290,380]},{"feet":[158.5,376],"pixels":50039,"rect":[48,80,387,379]},{"feet":[169.5,370],"pixels":48142,"rect":[937,83,389,373]},{"feet":[302.5,343],"pixels":46451,"rect":[57,497,397,346]},{"feet":[53.5,295],"pixels":36024,"rect":[590,497,293,298]},{"feet":[51.5,309],"pixels":38361,"rect":[1452,501,305,312]},{"feet":[189.0,326],"pixels":50820,"rect":[909,504,452,329]}]
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

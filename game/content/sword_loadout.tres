@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponLoadout" load_steps=5 format=3]
+[ext_resource type="Script" path="res://game/combat/weapon_loadout.gd" id="1"]
+[ext_resource type="Resource" path="res://game/content/light.tres" id="2"]
+[ext_resource type="Resource" path="res://game/content/heavy.tres" id="3"]
+[ext_resource type="Resource" path="res://game/content/modular/one_handed/warband.tres" id="4"]
+[resource]
+script = ExtResource("1")
+label = "Sword"
+primary = ExtResource("2")
+secondary = ExtResource("3")
+sprite_rig = ExtResource("4")

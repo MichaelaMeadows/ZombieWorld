@@ -13,6 +13,10 @@ extends Resource
 @export var knockback := 135.0
 @export var hit_stop := 0.045
 @export var heavy := false
+@export var on_hit_effects: Array[StatusApplication] = []
+enum Delivery { MELEE, PROJECTILE }
+@export var delivery := Delivery.MELEE
+@export var projectile_speed := 500.0
 
 func duration() -> float:
 	return startup + active + recovery

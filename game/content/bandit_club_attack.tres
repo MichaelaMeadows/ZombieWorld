@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttackDefinition" load_steps=2 format=3]
+[ext_resource type="Script" path="res://game/combat/attack_definition.gd" id="1"]
+[resource]
+script = ExtResource("1")
+label = "Club swing"
+startup = 0.38
+active = 0.14
+recovery = 0.45
+damage = 18
+reach = 64
+arc_degrees = 100
+stamina_cost = 16
+stagger = 0.25
+knockback = 145
+heavy = false
+delivery = 0

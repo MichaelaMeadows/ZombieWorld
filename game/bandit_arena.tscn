@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3]
+[ext_resource type="PackedScene" path="res://game/arena.tscn" id="1"]
+[ext_resource type="Resource" path="res://game/content/bandit_club.tres" id="2"]
+[ext_resource type="Resource" path="res://game/content/bandit_archer.tres" id="3"]
+[ext_resource type="Script" path="res://game/content/actor_archetype.gd" id="4"]
+[node name="BanditAmbush" instance=ExtResource("1")]
+enemy_archetypes = Array[ExtResource("4")]([ExtResource("2"), ExtResource("2"), ExtResource("3")])
+encounter_label = "bandits"
+encounter_hint = "Two clubs   •   One archer   •   Block or dodge arrows"
+include_warband = false

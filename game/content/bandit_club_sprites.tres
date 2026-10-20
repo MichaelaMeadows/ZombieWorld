@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ActorSpriteSet" load_steps=5 format=3]
+[ext_resource type="Script" path="res://game/presentation/actor_sprite_set.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/art/bandits/club_motion.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/bandits/club_combat.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/art/bandits/diagonal_attacks.png" id="4"]
+[resource]
+script = ExtResource("1")
+motion_sheet = ExtResource("2")
+combat_sheet = ExtResource("3")
+motion_scale = 0.4
+combat_scale = 0.37
+motion_regions = Array[Rect2]([Rect2(112, 31, 182, 169), Rect2(454, 31, 184, 169), Rect2(786, 32, 186, 168), Rect2(1113, 31, 182, 169), Rect2(93, 208, 198, 171), Rect2(444, 208, 194, 172), Rect2(768, 208, 197, 172), Rect2(1105, 209, 201, 171), Rect2(129, 383, 142, 158), Rect2(470, 382, 144, 161), Rect2(802, 387, 144, 154), Rect2(1132, 382, 143, 160), Rect2(112, 540, 145, 165), Rect2(447, 543, 142, 164), Rect2(796, 540, 139, 163), Rect2(1117, 540, 143, 166), Rect2(91, 709, 213, 141), Rect2(427, 710, 216, 140), Rect2(752, 704, 248, 149), Rect2(1105, 708, 202, 143), Rect2(129, 851, 148, 147), Rect2(439, 853, 177, 146), Rect2(796, 854, 147, 149), Rect2(1138, 851, 149, 150), Rect2(143, 996, 163, 153), Rect2(439, 999, 166, 153), Rect2(798, 1003, 167, 142), Rect2(1135, 999, 156, 153)])
+motion_pivots = Array[Vector2]([Vector2(70.0, 166), Vector2(70.5, 166), Vector2(69.5, 165), Vector2(69.0, 166), Vector2(82.5, 168), Vector2(71.5, 169), Vector2(79.5, 169), Vector2(80.0, 168), Vector2(45.0, 155), Vector2(44.5, 158), Vector2(53.0, 151), Vector2(63.0, 157), Vector2(95.5, 162), Vector2(88.0, 161), Vector2(79.0, 160), Vector2(92.5, 163), Vector2(99, 138), Vector2(103, 137), Vector2(113, 146), Vector2(97, 140), Vector2(55.5, 144), Vector2(78, 143), Vector2(51.0, 146), Vector2(53.5, 147), Vector2(44.5, 150), Vector2(88, 150), Vector2(40.0, 139), Vector2(35.0, 150)])
+combat_regions = Array[Rect2]([Rect2(90, 38, 204, 188), Rect2(431, 1, 177, 224), Rect2(750, 38, 296, 189), Rect2(1104, 38, 201, 188), Rect2(87, 243, 175, 179), Rect2(446, 198, 160, 223), Rect2(751, 258, 178, 163), Rect2(1117, 243, 178, 179), Rect2(92, 434, 192, 177), Rect2(445, 420, 172, 197), Rect2(738, 411, 278, 199), Rect2(1120, 435, 192, 178), Rect2(91, 631, 193, 175), Rect2(437, 607, 172, 211), Rect2(742, 618, 254, 189), Rect2(1122, 633, 183, 185), Rect2(92, 829, 179, 162), Rect2(440, 821, 178, 174), Rect2(729, 835, 253, 159), Rect2(1105, 829, 205, 167), Rect2(61, 1011, 259, 114), Rect2(395, 1018, 276, 106), Rect2(722, 1030, 291, 88), Rect2(1057, 1042, 302, 79)])
+combat_pivots = Array[Vector2]([Vector2(87.5, 185), Vector2(88.0, 221), Vector2(89.5, 186), Vector2(89.5, 185), Vector2(87.0, 176), Vector2(74.0, 220), Vector2(88.5, 160), Vector2(87.5, 176), Vector2(88.0, 174), Vector2(85.5, 194), Vector2(90.0, 196), Vector2(90.0, 175), Vector2(89.0, 172), Vector2(88.0, 208), Vector2(90.0, 186), Vector2(88.5, 182), Vector2(89.0, 159), Vector2(90.5, 171), Vector2(95.0, 156), Vector2(89.0, 164), Vector2(129.0, 111), Vector2(138.0, 103), Vector2(144.5, 85), Vector2(148.0, 76)])
+diagonal_sheet = ExtResource("4")
+diagonal_regions = Array[Rect2]([Rect2(31, 104, 384, 336), Rect2(492, 11, 338, 429), Rect2(923, 117, 384, 323), Rect2(1364, 103, 368, 337)])
+diagonal_pivots = Array[Vector2]([Vector2(168.0, 333), Vector2(168.5, 426), Vector2(185.0, 320), Vector2(168.5, 334)])
+diagonal_scale = 0.2

@@ -1,0 +1,8 @@
+ERROR: Failed to open log file for writing: user://logs/godot.log
+   at: rotate_file (core/io/logger.cpp:169)
+ERROR: Can't create shader cache folder, no shader caching will happen: user://
+   at: RasterizerGLES3 (drivers/gles3/rasterizer_gles3.cpp:345)
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

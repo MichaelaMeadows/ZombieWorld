@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="AttackDefinition" load_steps=5 format=3]
+[ext_resource type="Script" path="res://game/combat/attack_definition.gd" id="1"]
+[ext_resource type="Script" path="res://game/combat/status_application.gd" id="2"]
+[ext_resource type="Resource" path="res://game/content/knockdown.tres" id="3"]
+[sub_resource type="Resource" id="Proc"]
+script = ExtResource("2")
+effect = ExtResource("3")
+chance = 0.3
+[resource]
+script = ExtResource("1")
+label = "Greatsword sweep"
+startup = 0.36
+active = 0.18
+recovery = 0.46
+damage = 38
+reach = 102.0
+arc_degrees = 93.5
+stamina_cost = 23.0
+stagger = 0.25
+knockback = 210.0
+hit_stop = 0.065
+heavy = true
+on_hit_effects = Array[ExtResource("2")]([SubResource("Proc")])

@@ -1,0 +1,59 @@
+ONE-HANDED MODULAR ART - FINAL BATTLE-SCALE ASSETS
+
+Final sheets (RGBA, 2048x1792, eight columns, seven rows):
+body.png - shared unarmed character, cream tunic, trousers, boots.
+armor.png - independent bandit vest/scarf, no complete person.
+weapon.png - wooden clubs only, no skin.
+sword.png - steel swords only, no skin.
+warband_armor.png - independent blue/steel outer armor, no complete person.
+foreground.png - exact canonical body RGB with authored head/arm alpha masks.
+
+Final rigs:
+game/content/modular/one_handed/club.tres (Club bandit)
+game/content/modular/one_handed/warband.tres (Sword warband)
+Both share body.tres and foreground.tres. head_foreground.tres is an unused
+intermediate resource, not part of either final rig.
+Armor registration is baked into its independent atlas. Weapon regions,
+pivots, scales and rotations register the separate equipment to 56 hand poses.
+
+Generation and finishing:
+Initial artwork was generated with built-in image_gen; submitted prompts are
+in GENERATION_PROMPTS.txt. Original generated normalized sheets are preserved
+in source_generated/. After explicit user authorization to finish with
+pixel/mask editing, finish_masks.py used Pillow/NumPy to bake calibrated armor
+registration, constrain its alpha to the body silhouette, cut head/arm holes,
+and build foreground from exact accepted body pixels. It changes neither
+body identity nor original source atlases. No armor or weapon is baked into
+body.png. Do not run calibrate.py alone against final finished sheets;
+finish_masks.py restores its source inputs before calibration and finishing.
+
+Validation:
+All six final sheets have actual alpha transparency and identical dimensions.
+Automated comparison confirms every visible foreground RGB pixel equals the
+canonical body RGB at exactly the same coordinate.
+Godot rig.validate() returns [] for both rigs; all eight referenced layer
+instances report 56 frames and 2048x1792 sheets. Validator exits zero, with
+Godot shutdown resource/ObjectDB retention warnings from this small harness.
+All 56 club and 56 warband composites were inspected in Godot galleries.
+The parent reviewed the final sleeve/vest improvement as sufficient for the
+battle-size target. Final PNGs are frozen for parent import and gameplay QA.
+
+Art limitations:
+Some back-facing shoulder and armhole contours remain stylized and visible
+at enlarged inspection scale, especially warband poses 12-15 and 36-43.
+Grip registration is visually calibrated, not an assertion of exact anatomical
+pixel correspondence. These are battle-scale assets, not close-up portraits.
+
+Generation history:
+An earlier arms-only extraction was rejected by image_gen's output safety
+system (category sexual, request de229e42-210d-4036-bcc7-79250e020375).
+It produced no image and was not retried. The subsequently authorized
+pixel/mask workflow resolved the foreground extraction; no generation block
+remains on this delivery.
+
+Inspection:
+club-gallery.png and warband-gallery.png show the final 56-frame composites.
+gallery.gd renders raw current PNGs through Godot to bypass stale import data.
+finish_masks.py reproduces the final deterministic finishing pass.
+normalize.gd is an earlier normalization helper and should not be rerun on
+already normalized final sheets.

@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+WARNING: Invalid visual rig: Greatsword hero (calibration candidate): incompatible body; Greatsword hero (calibration candidate): incompatible equipment; Greatsword hero (calibration candidate): incompatible equipment
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] set_visual_rig (res://game/actors/arena_actor.gd:275)
+       [1] _select (res://game/presentation/equipment_workbench.gd:107)
+       [2] _ready (res://game/presentation/equipment_workbench.gd:83)
+WARNING: Invalid visual rig: Greatsword hero (calibration candidate): incompatible body; Greatsword hero (calibration candidate): incompatible equipment; Greatsword hero (calibration candidate): incompatible equipment
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] set_visual_rig (res://game/actors/arena_actor.gd:275)
+       [1] _select (res://game/presentation/equipment_workbench.gd:107)
+       [2] _ready (res://game/presentation/equipment_workbench.gd:83)
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

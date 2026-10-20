@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ActorArchetype" load_steps=5 format=3]
+[ext_resource type="Script" path="res://game/content/actor_archetype.gd" id="1"]
+[ext_resource type="Resource" path="res://game/content/bandit_archer_loadout.tres" id="2"]
+[ext_resource type="Resource" path="res://game/content/bandit_archer_sprites.tres" id="3"]
+[ext_resource type="Resource" path="res://game/content/modular/bow/archer.tres" id="4"]
+[resource]
+script = ExtResource("1")
+label = "Bandit archer"
+health = 65
+weapon = ExtResource("2")
+sprites = ExtResource("3")
+sprite_rig = ExtResource("4")
+ranged = true

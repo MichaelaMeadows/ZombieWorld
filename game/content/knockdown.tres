@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatusEffectDefinition" load_steps=2 format=3]
+[ext_resource type="Script" path="res://game/combat/status_effect_definition.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = &"knockdown"
+label = "Knocked down"
+duration = 1.0
+blocks_actions = true
+blocks_movement = true
+interrupts_action = true
+presentation = &"prone"
