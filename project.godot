@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Autonomous World — The Briarwatch"
-config/version="1.9.4"
+config/version="1.9.5"
 config/tags=PackedStringArray("template")
 run/main_scene="res://game/world/world.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
